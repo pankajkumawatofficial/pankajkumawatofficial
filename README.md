@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  🔭 Backend Developer from <strong>Jaipur, Rajasthan, India</strong> 🇮🇳 &nbsp;•&nbsp; 💼 Founder of <strong>LuckyLabs</strong>
+  🔭 Backend Developer from <strong>Jaipur, Rajasthan, India</strong> 🇮🇳 &nbsp;•&nbsp; 💼 Founder of <strong>codaipro.com</strong>
 </p>
 
 <div align="center">
@@ -22,7 +22,7 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 - 🌱 Learning **Advanced FastAPI**, **Cloud (AWS)**, and modern **Astro.js** patterns
 - 👯 Open to collaborating on **open-source projects** and **backend/API tooling**
 - 💬 Ask me about **Python, FastAPI, SQL/PostgreSQL, Docker, and Astro.js**
-- ⚡ Fun fact: I built my own **JARVIS assistant** 🤖
+- ⚡ Fun fact: I built my own **Autodm and Whatsapp OTP Verifaction** 
 
 ---
 
@@ -110,7 +110,7 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 
 [![BlogSpace Green](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=blogspace-Green&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/blogspace-Green)
 [![JARVIS Tony Stark](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=JARVIS-Tony-Stark&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/JARVIS-Tony-Stark)
-[![ProWriter LuckyLabs](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=prowriter.luckylabs&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/prowriter.luckylabs)
+[![ProWriter codaipro.com](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=prowriter.codaipro.com&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/prowriter.codaipro.com)
 [![MiniAI Vibe](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=miniai-vibe&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/miniai-vibe)
 
 </div>
@@ -130,7 +130,7 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 ```javascript
 const luckyYaduvanshi = {
     location: "Jaipur, Rajasthan, India",
-    company: "LuckyLabs",
+    company: "codaipro.com",
     role: "Python FastAPI Developer",
     currentFocus: ["FastAPI Backends", "SQL Database Design", "REST APIs", "Astro.js Frontends"],
     technologies: {
@@ -152,7 +152,7 @@ const luckyYaduvanshi = {
 I'm always happy to collaborate on interesting projects or chat about tech! Feel free to reach out:
 
 🌐 **Website:** [luckyyaduvanshi.in](https://luckyyaduvanshi.in)  
-💼 **Company:** LuckyLabs  
+💼 **Company:** codaipro.com  
 🤝 **Connect:** [LinkedIn](https://www.linkedin.com/in/lucky-yaduvanshi/)
 
 **"Code is like humor. When you have to explain it, it's bad!" — Cory House**
