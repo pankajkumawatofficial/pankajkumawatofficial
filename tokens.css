@@ -1,0 +1,90 @@
+/* Hallmark · tokens.css · genre: modern-minimal · theme: FastAPI Emerald & Obsidian */
+:root {
+  /* Dark Mode Default (Obsidian & FastAPI Emerald) */
+  --color-paper: oklch(0.14 0.015 240);
+  --color-paper-2: oklch(0.18 0.02 240);
+  --color-paper-3: oklch(0.23 0.025 240);
+  --color-ink: oklch(0.96 0.01 240);
+  --color-ink-muted: oklch(0.70 0.015 240);
+  --color-ink-subtle: oklch(0.50 0.015 240);
+  --color-rule: oklch(0.26 0.02 240);
+  --color-rule-subtle: oklch(0.20 0.015 240);
+  --color-accent: oklch(0.68 0.16 175);
+  --color-accent-hover: oklch(0.73 0.17 175);
+  --color-accent-subtle: oklch(0.22 0.06 175);
+  --color-accent-ink: oklch(0.98 0 0);
+  --color-focus: oklch(0.68 0.16 175);
+
+  /* Code Syntax Palette */
+  --syn-keyword: #2dd4bf;
+  --syn-decorator: #38bdf8;
+  --syn-function: #67e8f9;
+  --syn-string: #a7f3d0;
+  --syn-type: #facc15;
+  --syn-comment: #64748b;
+  --syn-number: #fbbf24;
+
+  /* Fonts */
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Geist Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Typography Scales */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-display: clamp(2.25rem, 4.5vw + 0.5rem, 3.75rem);
+
+  /* Spacing Scale (4pt semantic) */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 180ms;
+  --dur-base: 240ms;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-pill: 9999px;
+}
+
+/* Light Theme Overrides */
+html.light:root {
+  --color-paper: oklch(0.985 0.003 240);
+  --color-paper-2: oklch(0.95 0.005 240);
+  --color-paper-3: oklch(0.91 0.008 240);
+  --color-ink: oklch(0.15 0.02 240);
+  --color-ink-muted: oklch(0.45 0.02 240);
+  --color-ink-subtle: oklch(0.60 0.015 240);
+  --color-rule: oklch(0.88 0.01 240);
+  --color-rule-subtle: oklch(0.93 0.005 240);
+  --color-accent: oklch(0.55 0.16 175);
+  --color-accent-hover: oklch(0.50 0.17 175);
+  --color-accent-subtle: oklch(0.92 0.04 175);
+  --color-accent-ink: oklch(0.99 0 0);
+  --color-focus: oklch(0.55 0.16 175);
+
+  --syn-keyword: #0d9488;
+  --syn-decorator: #0284c7;
+  --syn-function: #0891b2;
+  --syn-string: #15803d;
+  --syn-type: #b45309;
+  --syn-comment: #94a3b8;
+  --syn-number: #d97706;
+}

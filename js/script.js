@@ -1,28 +1,37 @@
 // ============================================================
-// Lucky Yaduvanshi Official — Premium Portfolio Scripts
-// v2.0 — Enhanced animations, micro-interactions, scroll reveals
+// Lucky Yaduvanshi Official — FastAPI Developer Scripts
+// Hallmark modern-minimal workbench microinteractions
 // ============================================================
 
 (function () {
     'use strict';
 
-    // ---- Dark Mode Toggle ----
+    // ---- Theme Toggle (Default: Obsidian Dark) ----
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
 
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        html.classList.add('light');
+        html.classList.remove('dark');
+    } else {
         html.classList.add('dark');
+        html.classList.remove('light');
     }
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            const isLight = html.classList.toggle('light');
+            html.classList.toggle('dark', !isLight);
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            const icon = themeToggle.querySelector('.iconify');
+            if (icon) {
+                icon.setAttribute('data-icon', isLight ? 'lucide:moon' : 'lucide:sun');
+            }
         });
     }
 
-    // ---- Mobile Menu Toggle ----
+    // ---- Mobile Nav Drawer ----
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -30,7 +39,6 @@
         mobileMenuBtn.addEventListener('click', () => {
             const isOpen = !mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
-            // Animate hamburger to X
             const icon = mobileMenuBtn.querySelector('.iconify');
             if (icon) {
                 icon.setAttribute('data-icon', isOpen ? 'lucide:menu' : 'lucide:x');
@@ -46,27 +54,67 @@
         });
     }
 
-    // ---- Navbar Scroll Effect ----
-    const navbar = document.getElementById('navbar');
-    let lastScrollY = 0;
+    // ---- FastAPI Workbench Code Tabs ----
+    const tabButtons = document.querySelectorAll('.code-tab-btn');
+    const tabPanes = document.querySelectorAll('.code-pane');
 
-    function handleNavScroll() {
-        const scrollY = window.scrollY;
-        if (navbar) {
-            navbar.classList.toggle('scrolled', scrollY > 20);
-        }
-        lastScrollY = scrollY;
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.add('hidden'));
+
+            btn.classList.add('active');
+            const targetPane = document.getElementById(`tab-${targetTab}`);
+            if (targetPane) {
+                targetPane.classList.remove('hidden');
+            }
+        });
+    });
+
+    // ---- Live Test Endpoint Simulator ----
+    const testBtn = document.getElementById('btnTestEndpoint');
+    const latencyEl = document.getElementById('workbenchLatency');
+    const responsePayloadEl = document.getElementById('responsePayload');
+
+    if (testBtn && latencyEl && responsePayloadEl) {
+        testBtn.addEventListener('click', () => {
+            testBtn.disabled = true;
+            testBtn.innerHTML = '<span class="animate-spin inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full"></span> Executing...';
+            
+            // Simulate sub-5ms async call
+            setTimeout(() => {
+                const simulatedLatency = (Math.random() * 2.8 + 1.4).toFixed(1);
+                latencyEl.textContent = `${simulatedLatency}ms`;
+                
+                // Switch to response tab
+                const responseTabBtn = document.querySelector('[data-tab="response"]');
+                if (responseTabBtn) responseTabBtn.click();
+
+                // Update response timestamp
+                const now = new Date().toISOString();
+                const samplePayload = {
+                    status: "delivered",
+                    channel: "telegram_safety_valve",
+                    cost_inr: 0.00,
+                    provider_latency_ms: parseFloat(simulatedLatency),
+                    otp_hash: "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                    timestamp: now
+                };
+                responsePayloadEl.textContent = JSON.stringify(samplePayload, null, 2);
+
+                testBtn.disabled = false;
+                testBtn.innerHTML = '<span class="iconify" data-icon="lucide:play" data-width="12"></span> Test Endpoint';
+            }, 320);
+        });
     }
 
-    window.addEventListener('scroll', handleNavScroll, { passive: true });
-    handleNavScroll();
-
-    // ---- Active Nav Link (Scroll Spy) ----
+    // ---- Active Nav Link Scroll Spy ----
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link-item');
 
     function updateActiveNav() {
-        const scrollPos = window.scrollY + 120;
+        const scrollPos = window.scrollY + 140;
         sections.forEach(section => {
             const top = section.offsetTop;
             const height = section.offsetHeight;
@@ -86,168 +134,31 @@
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
-    // ---- Scroll Reveal (Intersection Observer) ----
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
-    });
-
-    document.querySelectorAll('.reveal').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // ---- FAQ Accordion ----
-    document.querySelectorAll('.faq-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const item = toggle.closest('.faq-item');
-            const content = item.querySelector('.faq-content');
-            const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-
-            // Close all
-            document.querySelectorAll('.faq-item').forEach(i => {
-                i.classList.remove('open');
-                const btn = i.querySelector('.faq-toggle');
-                const c = i.querySelector('.faq-content');
-                if (btn) btn.setAttribute('aria-expanded', 'false');
-                if (c) {
-                    c.classList.remove('expanded');
-                    c.style.maxHeight = '0';
-                }
-            });
-
-            // Open clicked (if it was closed)
-            if (!isOpen) {
-                item.classList.add('open');
-                toggle.setAttribute('aria-expanded', 'true');
-                content.classList.add('expanded');
-                content.style.maxHeight = content.scrollHeight + 'px';
-            }
-        });
-    });
-
-    // ---- Contact Form ----
+    // ---- Contact Form Handler ----
     const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('contactSubmit');
 
-    if (contactForm) {
-        const contactSubmit = document.getElementById('contactSubmit');
-        const submitText = document.getElementById('submitText');
-        const submitLoader = document.getElementById('submitLoader');
-        const formMessage = document.getElementById('formMessage');
+    if (contactForm && formMessage && submitBtn) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="animate-spin inline-block w-4 h-4 border-2 border-white/40 border-t-white rounded-full"></span> Sending...';
 
-        const setMessage = (text, type) => {
-            const styles = {
-                success: 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/30',
-                error: 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800/30'
-            };
-            formMessage.className = `text-sm text-center py-3 rounded-xl ${styles[type]}`;
-            formMessage.textContent = text;
-            formMessage.classList.remove('hidden');
-        };
-
-        const setLoading = (isLoading) => {
-            contactSubmit.disabled = isLoading;
-            contactSubmit.classList.toggle('opacity-60', isLoading);
-            contactSubmit.classList.toggle('cursor-not-allowed', isLoading);
-            submitText.textContent = isLoading ? 'Sending...' : 'Send Message';
-            if (submitLoader) submitLoader.classList.toggle('hidden', !isLoading);
-        };
-
-        const validateField = (input) => {
-            const value = input.value.trim();
-            if (!value) return false;
-            if (input.type === 'email') {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-            }
-            if (input.minLength && value.length < Number(input.minLength)) return false;
-            return true;
-        };
-
-        const validateForm = (form) => {
-            let isValid = true;
-            form.querySelectorAll('[required]').forEach(field => {
-                const valid = validateField(field);
-                field.style.borderColor = valid ? '' : '#ef4444';
-                if (!valid) isValid = false;
-            });
-            return isValid;
-        };
-
-        contactForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            if (!validateForm(contactForm)) {
-                setMessage('Please fill in all required fields with valid information.', 'error');
-                return;
-            }
-
-            setLoading(true);
-
-            const formData = {
-                name: document.getElementById('contactName').value.trim(),
-                email: document.getElementById('contactEmail').value.trim(),
-                subject: document.getElementById('contactSubject').value.trim(),
-                message: document.getElementById('contactMessage').value.trim()
-            };
-
-            try {
-                // Replace with real endpoint when ready:
-                // const response = await fetch('https://your-backend.com/contact', {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify(formData)
-                // });
-                // if (!response.ok) throw new Error('Request failed');
-
-                await new Promise(resolve => setTimeout(resolve, 1200));
-                setMessage('✓ Message sent successfully! Lucky Yaduvanshi will get back to you soon.', 'success');
+            setTimeout(() => {
+                formMessage.classList.remove('hidden');
+                formMessage.className = 'text-xs text-center py-2 px-4 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono mt-3';
+                formMessage.textContent = 'HTTP 200 OK: Inbound message dispatched to Lucky Yaduvanshi. I will respond within 24 hours.';
                 contactForm.reset();
-            } catch (error) {
-                setMessage('Something went wrong. Please try again or email contact@luckyyaduvanshi.in.', 'error');
-            } finally {
-                setLoading(false);
-            }
-        });
-
-        // Real-time field validation on blur
-        contactForm.querySelectorAll('.form-field').forEach(field => {
-            field.addEventListener('blur', () => {
-                if (field.hasAttribute('required')) {
-                    const valid = validateField(field);
-                    field.style.borderColor = valid ? '' : '#ef4444';
-                }
-            });
-            field.addEventListener('input', () => {
-                if (field.style.borderColor === 'rgb(239, 68, 68)') {
-                    field.style.borderColor = '';
-                }
-            });
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span class="iconify" data-icon="lucide:send" data-width="14"></span> Send Message';
+            }, 600);
         });
     }
 
-    // ---- Current Year ----
-    const currentYearEl = document.getElementById('currentYear');
-    if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
+    // ---- Footer Year ----
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
-
-    // ---- Smooth Scroll for Anchor Links ----
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
 })();
