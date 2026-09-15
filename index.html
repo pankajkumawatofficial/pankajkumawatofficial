@@ -625,164 +625,402 @@
 
 
     <!-- ============================================================
-         PROJECTS SECTION
+         FEATURED PRODUCTS / ENGINEERING PROJECTS SECTION
          ============================================================ -->
     <section id="projects" class="py-24 px-6 xl:px-0">
         <div class="max-w-[1200px] mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-16 reveal">
                 <div class="section-label inline-flex mx-auto">
-                    <span class="iconify" data-icon="lucide:code-2" data-width="12"></span>
-                    Portfolio
+                    <span class="iconify" data-icon="lucide:layers" data-width="12"></span>
+                    Featured Products
                 </div>
-                <h2 class="section-title mt-3 mb-4">Backend Projects by <span class="gradient-text">Lucky Yaduvanshi</span></h2>
-                <p class="section-subtitle mx-auto">FastAPI APIs, SQL database systems, and server infrastructure I've built. Real backend solutions handling real data.</p>
+                <h2 class="section-title mt-3 mb-4">Featured Products & <span class="gradient-text">Engineering Projects</span></h2>
+                <p class="section-subtitle mx-auto">Production-grade distributed systems, AI developer tools, and high-throughput infrastructure architected and shipped by Lucky Yaduvanshi.</p>
             </div>
 
-            <!-- Project Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project 1 — E-Commerce API -->
-                <article class="project-card reveal">
-                    <div class="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                        <div class="project-card-icon w-16 h-16 rounded-2xl bg-brand-teal/10 flex items-center justify-center">
-                            <span class="iconify text-brand-teal" data-icon="lucide:shopping-cart" data-width="32"></span>
+            <!-- Project Grid: 2-column layout for deep technical architecture readability -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1: CodAI -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                                Flagship · Desktop &amp; Systems
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:cpu" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">CodAI — 100% Offline AI Coding Assistant</h3>
+                        <p class="text-sm font-semibold text-brand-teal dark:text-teal-400 mb-4">Offline AI coding assistant running quantized GGUF models on consumer hardware.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            An open-source, local AI coding companion designed for university lab environments and low-connectivity regions with strict privacy requirements. Runs localized GGUF language models directly on CPU with zero internet connection, zero external API calls, and zero administrative permissions.
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Engineered a 4-layer decoupled architecture separating the inference engine (C++ <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-teal-600 dark:text-teal-400 font-mono">llama.cpp</code>), process watchdog controller, and streaming user interface.
+                                </li>
+                                <li class="achievement-item">
+                                    Implemented 4-level single-instance concurrency guards (Win32 Named Mutex, socket port binding, PID lockfiles, and OS signal traps) preventing orphaned background processes.
+                                </li>
+                                <li class="achievement-item">
+                                    Optimized 4-bit integer quantization (<code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-teal-600 dark:text-teal-400 font-mono">Q4_K_M</code>) models to execute within 2 GB – 4 GB RAM on standard dual-core CPUs without requiring dedicated GPUs.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">C++ (llama.cpp)</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">GGUF Quantization</span>
+                            <span class="tech-tag">AVX2 SIMD</span>
+                            <span class="tech-tag">Windows Win32 Mutex</span>
+                            <span class="tech-tag">FastAPI/Browser GUI</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-brand-teal/10 text-brand-teal text-[10px] font-bold uppercase tracking-wider">REST API</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">FastAPI</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">PostgreSQL</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">E-Commerce API</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">Complete REST API for e-commerce operations built with FastAPI: user auth, product catalog, cart management, order processing, and payment integration with Pydantic validation and JWT security.</p>
-                        <div class="flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal hover:text-brand-teal-hover transition-colors">
-                                <span class="iconify" data-icon="lucide:file-text" data-width="12"></span> API Docs
-                            </a>
-                            <a href="https://github.com/Luckyyaduvanshiofficial/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-teal transition-colors" rel="noopener" target="_blank">
-                                <span class="iconify" data-icon="lucide:github" data-width="12"></span> Source
-                            </a>
-                        </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://codaipro.com/codai" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://github.com/Luckyyaduvanshiofficial/Codaipro" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+                        </a>
                     </div>
                 </article>
 
-                <!-- Project 2 — Task Management API -->
-                <article class="project-card reveal reveal-delay-1">
-                    <div class="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                        <div class="project-card-icon w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center">
-                            <span class="iconify text-blue-500" data-icon="lucide:check-square" data-width="32"></span>
+                <!-- Project 2: WA OTP -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                Backend &amp; Infrastructure · Open Source (AGPL-3.0)
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:shield-check" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">WA OTP — WhatsApp &amp; Telegram OTP Gateway</h3>
+                        <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-4">Two-call phone verification gateway over WhatsApp and Telegram with zero DLT registration.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A lightweight, self-hostable OTP delivery gateway built to solve India's developer telecom barrier (TRAI DLT registration and Meta corporate verification). Delivers one-time verification codes over Telegram (100% free forever) and WhatsApp with an honest two-endpoint REST API.
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Architected a high-throughput hot-path in FastAPI (:8000) coupled with an isolated PocketBase (:8090) control plane for zero-code audit ledgers.
+                                </li>
+                                <li class="achievement-item">
+                                    Implemented strict concurrency safety using per-key and per-(owner, phone) <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 font-mono">asyncio.Lock</code> primitives, eliminating race-condition quota bypasses and duplicate verification.
+                                </li>
+                                <li class="achievement-item">
+                                    Built a zero-friction mock delivery engine (<code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 font-mono">WAOTP_MOCK_DELIVERY=1</code>) enabling realistic local integration testing without third-party credentials.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Python 3.12</span>
+                            <span class="tech-tag">PocketBase (Go/SQLite)</span>
+                            <span class="tech-tag">Meta Graph API v25.0</span>
+                            <span class="tech-tag">Telegram Bot API</span>
+                            <span class="tech-tag">Next.js 16</span>
+                            <span class="tech-tag">Docker</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-500 text-[10px] font-bold uppercase tracking-wider">API</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">FastAPI</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">Redis</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Task Management API</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">Backend for productivity apps built with FastAPI and Async SQLAlchemy: real-time updates, role-based access control, task assignments, and Redis caching for performance optimization.</p>
-                        <div class="flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal hover:text-brand-teal-hover transition-colors">
-                                <span class="iconify" data-icon="lucide:file-text" data-width="12"></span> API Docs
-                            </a>
-                            <a href="https://github.com/Luckyyaduvanshiofficial/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-teal transition-colors" rel="noopener" target="_blank">
-                                <span class="iconify" data-icon="lucide:github" data-width="12"></span> Source
-                            </a>
-                        </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://waotp.codaipro.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://github.com/Luckyyaduvanshiofficial/wa-otp" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+                        </a>
                     </div>
                 </article>
 
-                <!-- Project 3 — Analytics API -->
-                <article class="project-card reveal reveal-delay-2">
-                    <div class="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                        <div class="project-card-icon w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center">
-                            <span class="iconify text-purple-500" data-icon="lucide:bar-chart-3" data-width="32"></span>
+                <!-- Project 3: TempMail -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                Full-Stack &amp; Event-Driven
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:inbox" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">TempMail — Disposable Email Service &amp; Real-Time API</h3>
+                        <p class="text-sm font-semibold text-amber-600 dark:text-amber-400 mb-4">Disposable temporary email with a live SSE inbox, automated OTP parser, and public API.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A privacy-focused temporary email platform designed for disposable account testing and OTP extraction. Features real-time push message delivery, zero telemetry, and automated extraction of verification codes and magic links.
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Designed an event-driven Server-Sent Events (SSE) streaming pipeline delivering incoming emails to browser clients with sub-500ms latency, eliminating client-side polling.
+                                </li>
+                                <li class="achievement-item">
+                                    Engineered an automated regex MIME parser extracting 4–8 digit verification codes and magic links directly from raw HTML payloads.
+                                </li>
+                                <li class="achievement-item">
+                                    Implemented a strict receive-only policy with a 10-minute automated TTL data-purge daemon, preventing abuse, spam relaying, and IP blacklisting.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Server-Sent Events (SSE)</span>
+                            <span class="tech-tag">MIME Parser Engine</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">REST API</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-500 text-[10px] font-bold uppercase tracking-wider">Data API</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">SQLAlchemy</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">Docker</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Analytics Data API</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">High-performance analytics backend built with FastAPI and SQLAlchemy: complex SQL aggregations, time-series data handling, CSV export endpoints, and Docker containerization.</p>
-                        <div class="flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal hover:text-brand-teal-hover transition-colors">
-                                <span class="iconify" data-icon="lucide:file-text" data-width="12"></span> API Docs
-                            </a>
-                            <a href="https://github.com/Luckyyaduvanshiofficial/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-teal transition-colors" rel="noopener" target="_blank">
-                                <span class="iconify" data-icon="lucide:github" data-width="12"></span> Source
-                            </a>
-                        </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://tempmail.codaipro.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://codaipro.com/tempmail" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:globe" data-width="14"></span> Landing Page
+                        </a>
                     </div>
                 </article>
 
-                <!-- Project 4 — Auth Microservice -->
-                <article class="project-card reveal reveal-delay-1">
-                    <div class="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                        <div class="project-card-icon w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
-                            <span class="iconify text-emerald-500" data-icon="lucide:shield-check" data-width="32"></span>
+                <!-- Project 4: AutoDM -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-500"></span>
+                                SaaS &amp; Social API Automation
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:send" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">AutoDM — Instagram DM Automation Platform</h3>
+                        <p class="text-sm font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-4">Automated Instagram DM delivery built on Meta's official Graph API.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A free, production-grade social automation tool that converts Instagram comments, mentions, and story replies into direct messages in real time using Meta's official Graph API.
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Built a resilient webhook event consumer processing comment streams, story mentions, and keyword triggers (regex, exact, contains, whole-word).
+                                </li>
+                                <li class="achievement-item">
+                                    Implemented a token-bucket rate limiter with randomized jitter to strictly respect Meta Graph API burst and hourly quotas while preserving account reputation.
+                                </li>
+                                <li class="achievement-item">
+                                    Created an in-memory &amp; persisted deduplication ledger providing repeat-protection, ensuring no user ever receives duplicate automated DMs.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">Meta Instagram Graph API</span>
+                            <span class="tech-tag">Webhooks</span>
+                            <span class="tech-tag">Node.js/TypeScript</span>
+                            <span class="tech-tag">OAuth 2.0</span>
+                            <span class="tech-tag">Token Bucket Rate Limiting</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-bold uppercase tracking-wider">Microservice</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">JWT</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">Python</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Authentication Microservice</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">Standalone FastAPI auth service with email/password, JWT (python-jose) token management, refresh tokens, OAuth2 password flow, password reset, and rate limiting for security.</p>
-                        <div class="flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal hover:text-brand-teal-hover transition-colors">
-                                <span class="iconify" data-icon="lucide:file-text" data-width="12"></span> API Docs
-                            </a>
-                            <a href="https://github.com/Luckyyaduvanshiofficial/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-teal transition-colors" rel="noopener" target="_blank">
-                                <span class="iconify" data-icon="lucide:github" data-width="12"></span> Source
-                            </a>
-                        </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://autodm.codaipro.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://codaipro.com/autodm" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:globe" data-width="14"></span> Landing Page
+                        </a>
                     </div>
                 </article>
 
-                <!-- Project 5 — URL Shortener -->
-                <article class="project-card reveal reveal-delay-2">
-                    <div class="aspect-video overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                        <div class="project-card-icon w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center">
-                            <span class="iconify text-amber-500" data-icon="lucide:link" data-width="32"></span>
+                <!-- Project 5: LLMs.txt Generator -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                                Developer Tooling &amp; AI Search
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:file-code-2" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">LLMs.txt Generator — AI Discoverability &amp; Crawling Suite</h3>
+                        <p class="text-sm font-semibold text-sky-600 dark:text-sky-400 mb-4">Automated crawler and validator generating llms.txt and llms-full.txt files for AI search engine indexing.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A developer utility that crawls website sitemaps, extracts clean content stripped of HTML boilerplate, categorizes pages into structured topics, and generates standardized llms.txt and llms-full.txt files for consumption by LLM search agents (ChatGPT, Claude, Perplexity).
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Engineered an asynchronous recursive crawler that parses XML sitemaps, extracts semantic DOM nodes, and converts HTML to clean Markdown with boilerplate stripping.
+                                </li>
+                                <li class="achievement-item">
+                                    Developed a deterministic classification engine categorizing URLs into Docs, Blog, Product, Support, and Legal sections.
+                                </li>
+                                <li class="achievement-item">
+                                    Built a linting validator that parses generated markdown, flags broken internal/external references, highlights thin descriptions, and scores compliance.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Fast Asynchronous Crawler</span>
+                            <span class="tech-tag">DOM Parser</span>
+                            <span class="tech-tag">AST Markdown Compiler</span>
+                            <span class="tech-tag">SEO Validation Engine</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 text-[10px] font-bold uppercase tracking-wider">Open Source</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">FastAPI</span>
-                            <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold">PostgreSQL</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">URL Shortener API</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">High-performance URL shortening service built with FastAPI: click analytics, custom aliases, expiration handling, and rate limiting. Includes full test coverage with pytest.</p>
-                        <div class="flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal hover:text-brand-teal-hover transition-colors">
-                                <span class="iconify" data-icon="lucide:file-text" data-width="12"></span> API Docs
-                            </a>
-                            <a href="https://github.com/Luckyyaduvanshiofficial/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-teal transition-colors" rel="noopener" target="_blank">
-                                <span class="iconify" data-icon="lucide:github" data-width="12"></span> Source
-                            </a>
-                        </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://llms-txt-generator.in" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://codaipro.com/llms-txt-generator" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:globe" data-width="14"></span> Landing Page
+                        </a>
                     </div>
                 </article>
 
-                <!-- GitHub CTA -->
-                <div class="rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center p-8 text-center project-card reveal reveal-delay-3">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4">
-                        <span class="iconify text-slate-500 dark:text-slate-400" data-icon="lucide:github" data-width="24"></span>
+                <!-- Project 6: RankLLMs -->
+                <article class="project-card border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <!-- Header / Badge & Icon -->
+                        <div class="flex items-start justify-between gap-4 mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 text-xs font-semibold tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                                Data Engineering &amp; Performance Analytics
+                            </span>
+                            <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center project-card-icon shrink-0">
+                                <span class="iconify" data-icon="lucide:bar-chart-3" data-width="22"></span>
+                            </div>
+                        </div>
+
+                        <!-- Title & Tagline -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">RankLLMs — AI Model Benchmark &amp; Leaderboard Engine</h3>
+                        <p class="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-4">Independent AI model leaderboard and multi-dimensional benchmark comparison engine.</p>
+
+                        <!-- Short Portfolio Description -->
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            An independent analytics and comparison platform tracking 80+ proprietary and open-weights AI models across reasoning benchmarks, coding accuracy, agentic performance, token latency, and blended API pricing.
+                        </p>
+
+                        <!-- Key Technical Highlights -->
+                        <div class="mb-6">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Key Technical Highlights</div>
+                            <ul class="space-y-2.5">
+                                <li class="achievement-item">
+                                    Architected a multi-metric aggregation pipeline standardizing benchmarks (MMLU-Pro, HumanEval, SWE-bench, Arena Elo) into comparable arithmetic indices.
+                                </li>
+                                <li class="achievement-item">
+                                    Built responsive 2D dynamic scatter visualization engines plotting intelligence vs. latency and performance vs. blended cost per million tokens.
+                                </li>
+                                <li class="achievement-item">
+                                    Deployed an edge-cached read-heavy architecture and public JSON API delivering sub-50ms global leaderboard queries without backend database overhead.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Edge Caching / CDN</span>
+                            <span class="tech-tag">High-Performance Data Visualization</span>
+                            <span class="tech-tag">Multi-Metric Normalization</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">View Code on GitHub</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">Explore backend repositories, API projects, and open-source contributions by Lucky Yaduvanshi.</p>
-                    <a href="https://github.com/Luckyyaduvanshiofficial/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold rounded-full py-2.5 px-6 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all duration-300">
-                        <span class="iconify" data-icon="lucide:github" data-width="16"></span>
-                        Visit GitHub
-                    </a>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                        <a href="https://rankllms.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-teal text-white hover:bg-brand-teal-hover transition-all duration-300 shadow-sm shadow-brand-teal/25">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                        </a>
+                        <a href="https://codaipro.com/rankllms" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-brand-teal hover:border-brand-teal/40 dark:hover:border-brand-teal/40 transition-all duration-300 bg-slate-50 dark:bg-slate-800/60">
+                            <span class="iconify" data-icon="lucide:globe" data-width="14"></span> Landing Page
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- GitHub & Open-Source Engineering CTA Banner -->
+            <div class="rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700/80 flex flex-col md:flex-row items-center justify-between p-8 text-center md:text-left project-card reveal">
+                <div class="flex flex-col md:flex-row items-center gap-5 mb-6 md:mb-0">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+                        <span class="iconify text-slate-700 dark:text-slate-300" data-icon="lucide:github" data-width="28"></span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Explore Open-Source Code &amp; Repositories</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xl">Inspect complete backend implementations, automated test suites, CI/CD quadlets, and architecture patterns on GitHub.</p>
+                    </div>
                 </div>
+                <a href="https://github.com/Luckyyaduvanshiofficial/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold rounded-full py-3 px-7 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all duration-300 shrink-0 shadow-lg shadow-slate-900/10">
+                    <span class="iconify" data-icon="lucide:github" data-width="16"></span>
+                    Visit GitHub Profile
+                </a>
             </div>
         </div>
     </section>
@@ -971,7 +1209,7 @@
                         <span class="faq-chevron iconify shrink-0 text-slate-400" data-icon="lucide:chevron-down" data-width="18"></span>
                     </button>
                     <div class="faq-content px-5 pb-5">
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Lucky Yaduvanshi builds <strong>REST APIs, authentication systems, e-commerce backends, analytics data APIs, and SQL database architectures</strong>. He handles server-side logic, FastAPI design, database optimization, and deployment with Docker.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Lucky Yaduvanshi builds <strong>production-grade engineering systems, AI developer tooling, and high-throughput backend infrastructure</strong>. His flagship shipped products include <strong>CodAI</strong> (100% offline GGUF AI coding assistant), <strong>WA OTP</strong> (WhatsApp & Telegram verification gateway), <strong>TempMail</strong> (real-time SSE disposable email service), <strong>AutoDM</strong> (Meta Graph API Instagram automation), <strong>LLMs.txt Generator</strong> (crawler & AI search discoverability suite), and <strong>RankLLMs</strong> (multi-metric AI model benchmark & leaderboard engine).</p>
                     </div>
                 </div>
             </div>

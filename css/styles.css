@@ -513,8 +513,59 @@ body > .noise-overlay {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-card:hover .project-card-icon {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.5rem;
+    background: rgba(241, 245, 249, 0.9);
+    color: #475569;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    transition: all 0.2s ease;
+}
+.dark .tech-tag {
+    background: rgba(30, 41, 59, 0.6);
+    color: #94a3b8;
+    border-color: rgba(51, 65, 85, 0.7);
+}
+.tech-tag:hover {
+    border-color: rgba(13, 148, 136, 0.4);
+    color: #0d9488;
+}
+.dark .tech-tag:hover {
+    border-color: rgba(45, 212, 191, 0.4);
+    color: #2dd4bf;
+}
+
+.achievement-item {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #475569;
+}
+.dark .achievement-item {
+    color: #94a3b8;
+}
+.achievement-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: #0d9488;
+}
+.dark .achievement-item::before {
+    background: #2dd4bf;
+}
+
 
 /* ============================================================
    FAQ ACCORDION — Smooth expand with border glow
