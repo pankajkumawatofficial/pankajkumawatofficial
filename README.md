@@ -75,7 +75,7 @@ Hi there! I'm **Pankaj Kumawat**, a **Software Engineer** from **Jaipur, Rajasth
 
 [![Pankaj Kumawat's GitHub Stats](https://github-readme-stats.vercel.app/api?username=pankajkumawatofficial&show_icons=true&theme=radical&hide_border=true)](https://github.com/pankajkumawatofficial)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pankajkumawat&layout=compact&theme=radical&hide_border=true)](https://github.com/pankajkumawatofficial)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pankajkumawatofficial&layout=compact&theme=radical&hide_border=true)](https://github.com/pankajkumawatofficial)
 
 </div>
 

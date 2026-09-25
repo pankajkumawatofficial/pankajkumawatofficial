@@ -147,7 +147,7 @@
                         availability: "Open to Software Engineer, AI/ML & Data Science roles",
                         contact: "pankajkumawat2023@gmail.com",
                         projects_built: 3,
-                        github: "https://github.com/pankajkumawat"
+                        github: "https://github.com/pankajkumawatofficial"
                     },
                     download_status: "initiated",
                     generated_at: now
