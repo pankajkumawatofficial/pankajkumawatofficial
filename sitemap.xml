@@ -13,37 +13,14 @@
             <image:caption>Pankaj Kumawat — Software Engineer from Jaipur, India specializing in Python, Django, AI/ML, and Data Science</image:caption>
         </image:image>
         <image:image>
+            <image:loc>https://pankajkumawat.in/images/pankaj-about.jpg</image:loc>
+            <image:title>Pankaj Kumawat — About</image:title>
+            <image:caption>Portrait of Pankaj Kumawat, Software Engineer (AI/ML, Data Science, Python/Django)</image:caption>
+        </image:image>
+        <image:image>
             <image:loc>https://pankajkumawat.in/images/workspace.webp</image:loc>
             <image:title>Pankaj Kumawat ML Pipeline Workbench</image:title>
         </image:image>
-    </url>
-
-    <url>
-        <loc>https://pankajkumawat.in/#expertise</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://pankajkumawat.in/#projects</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://pankajkumawat.in/#skills</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://pankajkumawat.in/#contact</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
     </url>
 
 </urlset>

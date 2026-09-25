@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>404 — Signal Lost | Pankaj Kumawat</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0f172a;
+            background-image:
+                linear-gradient(rgba(13, 148, 136, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 148, 136, 0.06) 1px, transparent 1px);
+            background-size: 32px 32px;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: 1.5rem;
+        }
+        .card {
+            max-width: 34rem;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(13, 148, 136, 0.35);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.7);
+        }
+        .eyebrow {
+            font-family: ui-monospace, 'Cascadia Code', 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #2dd4bf;
+            margin-bottom: 0.9rem;
+        }
+        h1 {
+            font-size: clamp(2.6rem, 9vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.9rem;
+        }
+        h1 span { color: #0d9488; }
+        p {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #94a3b8;
+            margin-bottom: 1.8rem;
+        }
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #0d9488;
+            color: #04110f;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.6rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+        a:hover {
+            background: #14b8a6;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -14px rgba(13, 148, 136, 0.65);
+        }
+        a:focus-visible { outline: 2px solid #2dd4bf; outline-offset: 3px; }
+        .hint {
+            margin-top: 1.4rem;
+            font-family: ui-monospace, 'Cascadia Code', 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <div class="eyebrow">// route not found — exit code 404</div>
+        <h1><span>4</span>0<span>4</span></h1>
+        <p>
+            The requested route does not exist on pankajkumawat.in. The signal was lost somewhere
+            between the request and the response — head back to the homepage to reconnect.
+        </p>
+        <a href="https://pankajkumawat.in/">&#8592; Return to homepage</a>
+        <div class="hint">Pankaj Kumawat · Software Engineer · Jaipur, India</div>
+    </main>
+</body>
+</html>

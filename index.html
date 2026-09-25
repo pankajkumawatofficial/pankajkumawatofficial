@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="https://pankajkumawat.in/">
 
-    <title>Pankaj Kumawat | Software Engineer — AI/ML · Data Science · Python Backend</title>
-    <meta name="description" content="Pankaj Kumawat — Software Engineer from Jaipur, India. AI/ML Engineering, Data Science, Machine Learning, and Python/Django backend development. BCA (Computer Science) & MCA (in progress).">
+    <title>Pankaj Kumawat | Software Engineer — AI/ML, Python &amp; Data Science</title>
+    <meta name="description" content="Pankaj Kumawat — Software Engineer from Jaipur, India. AI/ML, Data Science, and Python/Django backend development. BCA &amp; MCA (in progress).">
     <meta name="keywords" content="Pankaj Kumawat, Software Engineer, AI Engineer, ML Engineer, Data Scientist, Machine Learning, Data Analytics, Python Developer, Backend Engineer, Artificial Intelligence, Django Developer">
     <meta name="author" content="Pankaj Kumawat">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -19,9 +19,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Pankaj Kumawat Official">
     <meta property="og:url" content="https://pankajkumawat.in/">
-    <meta property="og:title" content="Pankaj Kumawat | Software Engineer — AI/ML · Data Science · Python Backend">
+    <meta property="og:title" content="Pankaj Kumawat | Software Engineer — AI/ML, Python &amp; Data Science">
     <meta property="og:description" content="Software Engineer from Jaipur, India. Building intelligent systems with Machine Learning, Data Analytics, and scalable Python/Django backends.">
     <meta property="og:image" content="https://pankajkumawat.in/images/main-profile.webp">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="2048">
+    <meta property="og:image:alt" content="Pankaj Kumawat — Software Engineer">
     <meta property="og:locale" content="en_IN">
 
     <!-- Twitter Card -->
@@ -29,6 +32,7 @@
     <meta name="twitter:title" content="Pankaj Kumawat | Software Engineer">
     <meta name="twitter:description" content="Software Engineer. AI/ML Engineering, Data Science, and Python/Django backend systems.">
     <meta name="twitter:image" content="https://pankajkumawat.in/images/main-profile.webp">
+    <meta name="twitter:image:alt" content="Pankaj Kumawat — Software Engineer">
 
     <meta name="theme-color" content="#0d9488">
 
@@ -47,11 +51,21 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://pankajkumawat.in/#person",
         "name": "Pankaj Kumawat",
         "alternateName": ["Pankaj Kumawat Official", "pankajkumawat"],
         "jobTitle": ["Software Engineer", "AI/ML Engineer", "Data Scientist", "Backend Engineer"],
-        "url": "https://pankajkumawat.in",
+        "url": "https://pankajkumawat.in/",
         "image": "https://pankajkumawat.in/images/main-profile.webp",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jaipur",
+            "addressCountry": "IN"
+        },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "University of Rajasthan, Jaipur" },
+            { "@type": "CollegeOrUniversity", "name": "University Commerce College, Jaipur" }
+        ],
         "sameAs": [
             "https://github.com/pankajkumawatofficial",
             "https://www.linkedin.com/in/pankajkumawat9950/",
@@ -74,6 +88,86 @@
     }
     </script>
 
+    <!-- JSON-LD Structured Data — WebSite + FAQPage + Project Schemas -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://pankajkumawat.in/#website",
+                "url": "https://pankajkumawat.in/",
+                "name": "Pankaj Kumawat Official",
+                "description": "Pankaj Kumawat — Software Engineer from Jaipur, India. AI/ML, Data Science, and Python/Django backend development.",
+                "inLanguage": "en-IN",
+                "publisher": { "@id": "https://pankajkumawat.in/#person" }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://pankajkumawat.in/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Why AI/ML and data science alongside backend development?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Intelligent systems sit on top of clean software. I approach them together: machine-learning models are only valuable when they’re wrapped in reliable, maintainable applications. That combination — building predictive models in Python and shipping them inside Django web apps — is where I do my best work."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What kind of projects has Pankaj Kumawat built?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Three focused projects: House Price Prediction and Customer Churn Analysis (AI/ML and data analytics), and ConnectSphere (a Python/Django social platform with authentication and real-time interactions)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do you ensure a machine-learning model is trustworthy?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Clean data first, then honest evaluation. I handle missing values and outliers during preprocessing, split data into held-out sets, and validate with metrics like R², RMSE, and cross-validation rather than relying on training accuracy alone."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are you available for internships, freelance work, or full-time roles?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. I’m open to software engineering, AI/ML, data science, and backend development opportunities — internships, remote contracts, or full-time roles. Reach out directly through the terminal below or via LinkedIn."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://pankajkumawat.in/#project-house-price-prediction",
+                "name": "House Price Prediction",
+                "description": "Machine learning model predicting house prices from location, size, and amenities using Python & scikit-learn.",
+                "keywords": "Python, scikit-learn, pandas, NumPy, Regression, Machine Learning",
+                "author": { "@id": "https://pankajkumawat.in/#person" }
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://pankajkumawat.in/#project-customer-churn-analysis",
+                "name": "Customer Churn Analysis",
+                "description": "Classification project predicting churn risk and identifying the retention factors that actually matter.",
+                "keywords": "Python, Machine Learning, Classification, Data Science, Matplotlib, Seaborn",
+                "author": { "@id": "https://pankajkumawat.in/#person" }
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://pankajkumawat.in/#project-connectsphere",
+                "name": "ConnectSphere — Social Media Application",
+                "description": "Dynamic social platform with secure authentication, customizable profiles, and social interactions.",
+                "keywords": "Python, Django, MySQL, Social Media, Web Application",
+                "author": { "@id": "https://pankajkumawat.in/#person" }
+            }
+        ]
+    }
+    </script>
+
     <!-- Google Fonts: Space Grotesk (Technical Display) + Geist (Body) + JetBrains Mono (Code) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +182,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://code.iconify.design">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
 </head>
 
@@ -1081,7 +1176,7 @@
 
                 <div class="space-y-6">
                     <div class="p-2 bg-[var(--color-paper-2)] border border-[var(--color-rule)] rounded-2xl">
-                        <img src="/images/pankaj-about.jpg" alt="Pankaj Kumawat — Software Engineer" class="w-full aspect-square rounded-full object-cover transition-transform duration-500 hover:scale-[1.02]" loading="lazy">
+                        <img src="/images/pankaj-about.jpg" alt="Pankaj Kumawat — Software Engineer" width="1000" height="1000" class="w-full aspect-square rounded-full object-cover transition-transform duration-500 hover:scale-[1.02]" loading="lazy">
                     </div>
                     <div class="p-6 bg-[var(--color-paper-2)] border border-[var(--color-rule)] rounded-xl font-mono text-xs space-y-4">
                         <div class="text-[var(--color-accent)] font-bold text-sm">System Environment &amp; Stack</div>
