@@ -795,3 +795,148 @@ code, kbd, samp, pre, .font-mono {
     color: var(--color-accent);
     margin-bottom: 0.5rem;
 }
+
+/* ============================================================
+   AESTHETIC MOTION LAYER — hover micro-interactions + scroll reveals
+   ============================================================ */
+
+/* --- Hero load-in: staggered fade-up on first paint --- */
+@keyframes rv-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+}
+
+#home .hero-workbench-grid > div:first-child > * {
+    animation: rv-up 0.7s var(--ease-out) both;
+}
+#home .hero-workbench-grid > div:first-child > *:nth-child(1) { animation-delay: 0.05s; }
+#home .hero-workbench-grid > div:first-child > *:nth-child(2) { animation-delay: 0.16s; }
+#home .hero-workbench-grid > div:first-child > *:nth-child(3) { animation-delay: 0.27s; }
+#home .hero-workbench-grid > div:first-child > *:nth-child(4) { animation-delay: 0.38s; }
+#home .hero-workbench-grid > div:first-child > *:nth-child(5) { animation-delay: 0.49s; }
+#home .code-workbench { animation: rv-up 0.8s var(--ease-out) 0.4s both; }
+
+/* --- Scroll reveal (classes applied by js/script.js) --- */
+.rv {
+    opacity: 0;
+    transform: translateY(24px);
+}
+.rv.rv-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
+}
+
+/* --- Buttons: lift + glow --- */
+.btn-primary,
+.btn-terminal,
+.btn-ghost,
+.btn-test-endpoint,
+.nav-btn-action {
+    transition: background-color var(--dur-short) var(--ease-out),
+                border-color var(--dur-short) var(--ease-out),
+                color var(--dur-short) var(--ease-out),
+                transform 0.28s var(--ease-out),
+                box-shadow 0.28s var(--ease-out);
+}
+.btn-primary:hover,
+.btn-terminal:hover,
+.btn-ghost:hover {
+    transform: translateY(-2px);
+}
+.btn-primary:hover {
+    box-shadow: 0 14px 28px -14px rgba(13, 148, 136, 0.65);
+}
+.btn-terminal:hover,
+.btn-ghost:hover {
+    box-shadow: 0 14px 28px -16px rgba(0, 0, 0, 0.55);
+}
+.btn-test-endpoint:hover,
+.nav-btn-action:hover {
+    transform: translateY(-1px);
+}
+.btn-primary:active,
+.btn-terminal:active,
+.btn-ghost:active,
+.btn-test-endpoint:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* --- Sheen sweep across primary buttons --- */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.3) 50%, transparent 68%);
+    transform: translateX(-130%);
+    pointer-events: none;
+}
+.btn-primary:hover::after {
+    transform: translateX(130%);
+    transition: transform 0.7s var(--ease-out);
+}
+
+/* --- Cards: soft teal glow on hover --- */
+.tech-card {
+    transition: border-color var(--dur-short) var(--ease-out),
+                transform var(--dur-short) var(--ease-out),
+                box-shadow 0.3s var(--ease-out);
+}
+.tech-card:hover {
+    box-shadow: 0 18px 36px -22px rgba(13, 148, 136, 0.55);
+}
+
+/* --- Nav links & code tabs: micro-lift --- */
+.nav-link-item {
+    transition: color var(--dur-short) var(--ease-out),
+                background-color var(--dur-short) var(--ease-out),
+                transform 0.22s var(--ease-out);
+}
+.nav-link-item:hover {
+    transform: translateY(-1px);
+}
+.code-tab-btn {
+    transition: color var(--dur-short) var(--ease-out),
+                background-color var(--dur-short) var(--ease-out),
+                transform 0.22s var(--ease-out);
+}
+.code-tab-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* --- Workflow rows: lift + shadow --- */
+.api-spec-row {
+    transition: border-color var(--dur-short) var(--ease-out),
+                transform 0.28s var(--ease-out),
+                box-shadow 0.28s var(--ease-out);
+}
+.api-spec-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -20px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Reduced motion: keep everything still --- */
+@media (prefers-reduced-motion: reduce) {
+    #home .hero-workbench-grid * {
+        animation: none !important;
+    }
+    .rv,
+    .rv.rv-in {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .btn-primary:hover, .btn-terminal:hover, .btn-ghost:hover,
+    .btn-test-endpoint:hover, .nav-btn-action:hover,
+    .nav-link-item:hover, .code-tab-btn:hover,
+    .tech-card:hover, .api-spec-row:hover {
+        transform: none !important;
+    }
+    .marquee-track {
+        animation: none !important;
+    }
+}

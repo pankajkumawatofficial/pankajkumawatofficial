@@ -41,8 +41,8 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 ## Motion
 - Easings: `cubic-bezier(0.16, 1, 0.3, 1)` named `--ease-out`.
 - Durations: `--dur-short: 180ms`, `--dur-base: 240ms`.
-- Motion Stance: **Motion-cut**. No distracting scroll-triggered animations or floating aurora blobs. State transitions only (`transform` and `opacity`).
-- Reduced motion fallback: Opacity-only, `≤ 150ms`.
+- Motion Stance: **Motion layer** (user-requested). Subtle hover micro-interactions (lift, teal glow, sheen sweep) plus gentle scroll reveals via IntersectionObserver — `opacity` and `transform` only, ~650ms with staggered delays ≤450ms. No parallax or aurora blobs.
+- Reduced motion fallback: all animations/transitions disabled under `prefers-reduced-motion: reduce`.
 
 ## Microinteractions Stance
 - **ML Pipeline Code Workbench**: Tabbed code preview with instant switching (`0ms`).

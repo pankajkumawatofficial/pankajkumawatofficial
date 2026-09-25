@@ -214,6 +214,27 @@
         });
     }
 
+    // ---- Scroll Reveal (IntersectionObserver) ----
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rv-in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('section[id]:not(#home)').forEach((section) => {
+            Array.from(section.children).forEach((child, i) => {
+                child.classList.add('rv');
+                child.style.transitionDelay = (Math.min(i, 5) * 90) + 'ms';
+                revealObserver.observe(child);
+            });
+        });
+    }
+
     // ---- Year Footer ----
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
