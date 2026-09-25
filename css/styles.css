@@ -63,7 +63,7 @@ code, kbd, samp, pre, .font-mono {
    ============================================================ */
 .nav-pill-wrapper {
     position: fixed;
-    top: 1.25rem;
+    top: 0.75rem;
     left: 0;
     right: 0;
     z-index: 50;
@@ -176,7 +176,7 @@ code, kbd, samp, pre, .font-mono {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: start;
 }
 
 @media (min-width: 1024px) {
