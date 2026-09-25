@@ -218,11 +218,11 @@
     // Reveal units are item-level: cards, workflow rows, timeline entries,
     // cert frames, and plain text blocks — grids cascade through to their
     // cards instead of animating as one slab. Elements entering the viewport
-    // together stagger (140ms apart); solo elements appear immediately.
+    // together stagger (200ms apart); solo elements appear immediately.
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion && 'IntersectionObserver' in window) {
         const ITEM_SELECTOR = '.tech-card, .api-spec-row, .timeline-item, .cert-frame';
-        const STAGGER_MS = 140;
+        const STAGGER_MS = 200;
 
         const collectUnits = (container, out) => {
             Array.from(container.children).forEach((child) => {

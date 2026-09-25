@@ -20,7 +20,7 @@ No build steps required — this is a static site. Edit files directly:
 The project uses a locked Hallmark design system defined in `design.md`:
 - **Theme**: Teal Terminal & Obsidian (dark-first with light mode support)
 - **Fonts**: Space Grotesk (display), Geist Sans/Inter (body), JetBrains Mono (code)
-- **Motion**: slower, calmer hover micro-interactions (lift/glow/sheen, 260–450ms) + item-level IntersectionObserver scroll reveals (transform/opacity only, ~1s, 140ms per-batch stagger); respects `prefers-reduced-motion`
+- **Motion**: slow, cinematic hover micro-interactions (lift/glow/sheen, 340–600ms) + item-level IntersectionObserver scroll reveals (transform/opacity only, ~1.35s, 200ms per-batch stagger); respects `prefers-reduced-motion`
 
 ### Key Design Tokens (`tokens.css`)
 - Colors: `--color-paper`, `--color-paper-2`, `--color-ink`, `--color-accent`

@@ -24,6 +24,9 @@
 
     var LINK_DIST = 125;     // max distance for particle-to-particle bonds
     var POINTER_DIST = 170;  // reach of pointer attraction / bonds
+    var SPEED = 0.6;         // global motion scaler — everything drifts gently
+    var parX = 0;            // eased parallax so atoms trail the pointer
+    var parY = 0;
     var isLight = null;
     var palette = null;
 
@@ -87,9 +90,14 @@
         updatePalette();
         ctx.clearRect(0, 0, W, H);
 
-        // Mouse-parallax offset for the decorative atoms
-        var pax = pointer.active ? (pointer.x - W / 2) : 0;
-        var pay = pointer.active ? (pointer.y - H / 2) : 0;
+        // Mouse-parallax offset for the decorative atoms — eased so the
+        // atoms glide toward the target instead of snapping to it
+        var targetX = pointer.active ? (pointer.x - W / 2) : 0;
+        var targetY = pointer.active ? (pointer.y - H / 2) : 0;
+        parX += (targetX - parX) * 0.04;
+        parY += (targetY - parY) * 0.04;
+        var pax = parX;
+        var pay = parY;
 
         var i, j, p, q, dx, dy, d, d2;
 
@@ -139,13 +147,13 @@
             p.vx *= 0.985;
             p.vy *= 0.985;
             var sp2 = p.vx * p.vx + p.vy * p.vy;
-            if (sp2 > 4) {
+            if (sp2 > 2.25) {
                 var sp = Math.sqrt(sp2);
-                p.vx = (p.vx / sp) * 2;
-                p.vy = (p.vy / sp) * 2;
+                p.vx = (p.vx / sp) * 1.5;
+                p.vy = (p.vy / sp) * 1.5;
             }
-            p.x += p.vx;
-            p.y += p.vy;
+            p.x += p.vx * SPEED;
+            p.y += p.vy * SPEED;
 
             if (p.x < 0) { p.x = 0; p.vx *= -1; } else if (p.x > W) { p.x = W; p.vx *= -1; }
             if (p.y < 0) { p.y = 0; p.vy *= -1; } else if (p.y > H) { p.y = H; p.vy *= -1; }
@@ -159,10 +167,10 @@
         // ---- 3. Decorative atoms (orbiting electrons + mouse parallax) ----
         for (i = 0; i < atoms.length; i++) {
             var a = atoms[i];
-            a.x += a.vx;
-            a.y += a.vy;
-            a.rot += a.spin;
-            a.orbit += a.orbitSpeed;
+            a.x += a.vx * SPEED;
+            a.y += a.vy * SPEED;
+            a.rot += a.spin * SPEED;
+            a.orbit += a.orbitSpeed * SPEED;
             if (a.x < -70) a.x = W + 70; else if (a.x > W + 70) a.x = -70;
             if (a.y < -70) a.y = H + 70; else if (a.y > H + 70) a.y = -70;
 
