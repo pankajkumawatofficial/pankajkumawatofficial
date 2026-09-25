@@ -96,14 +96,15 @@
     const latencyEl = document.getElementById('workbenchLatency');
     const responsePayloadEl = document.getElementById('responsePayload');
 
-    function triggerResumeDownload() {
-        // Serve the real resume document from /resumes
-        const downloadAnchor = document.createElement('a');
-        downloadAnchor.href = 'resumes/PANKAJ_KUMAWAT_SOFTWARE_ENGINEER.docx';
-        downloadAnchor.download = 'PANKAJ_KUMAWAT_SOFTWARE_ENGINEER.docx';
-        document.body.appendChild(downloadAnchor);
-        downloadAnchor.click();
-        document.body.removeChild(downloadAnchor);
+    function openResumePdf() {
+        // Open the real PDF resume (stored in /resume) in a new browser tab
+        const resumeAnchor = document.createElement('a');
+        resumeAnchor.href = 'resume/Pankaj_Kumawat_Software_Engineer_Resume.pdf';
+        resumeAnchor.target = '_blank';
+        resumeAnchor.rel = 'noopener';
+        document.body.appendChild(resumeAnchor);
+        resumeAnchor.click();
+        document.body.removeChild(resumeAnchor);
     }
 
     if (testBtn && latencyEl && responsePayloadEl) {
@@ -153,8 +154,8 @@
                 };
                 responsePayloadEl.textContent = JSON.stringify(samplePayload, null, 2);
 
-                // Auto-trigger the resume download
-                triggerResumeDownload();
+                // Open the PDF resume in a new browser tab
+                openResumePdf();
 
                 testBtn.disabled = false;
                 testBtn.innerHTML = '<span class="iconify mr-1" data-icon="lucide:rotate-ccw" data-width="12"></span> Re-run Pipeline';
