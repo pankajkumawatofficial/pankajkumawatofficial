@@ -215,23 +215,60 @@
     }
 
     // ---- Scroll Reveal (IntersectionObserver) ----
+    // Reveal units are item-level: cards, workflow rows, timeline entries,
+    // cert frames, and plain text blocks — grids cascade through to their
+    // cards instead of animating as one slab. Elements entering the viewport
+    // together stagger (140ms apart); solo elements appear immediately.
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion && 'IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('rv-in');
-                    revealObserver.unobserve(entry.target);
+        const ITEM_SELECTOR = '.tech-card, .api-spec-row, .timeline-item, .cert-frame';
+        const STAGGER_MS = 140;
+
+        const collectUnits = (container, out) => {
+            Array.from(container.children).forEach((child) => {
+                if (child.matches(ITEM_SELECTOR)) {
+                    out.push(child);
+                    return;
+                }
+                const cs = window.getComputedStyle(child);
+                const isRow = cs.display.indexOf('flex') === 0 &&
+                    cs.flexDirection.indexOf('column') !== 0;
+                const stacked = cs.display === 'grid' || !isRow;
+                const hasOwnBox = cs.backgroundColor !== 'rgba(0, 0, 0, 0)' ||
+                    (cs.borderTopWidth !== '0px' && cs.borderTopStyle !== 'none');
+                const hasDirectText = Array.from(child.childNodes)
+                    .some((n) => n.nodeType === 3 && n.textContent.trim().length > 0);
+                if (child.childElementCount >= 2 && stacked && !hasOwnBox && !hasDirectText) {
+                    collectUnits(child, out); // transparent wrapper: cascade through it
+                } else {
+                    out.push(child);
                 }
             });
-        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+        };
 
-        document.querySelectorAll('section[id]:not(#home)').forEach((section) => {
-            Array.from(section.children).forEach((child, i) => {
-                child.classList.add('rv');
-                child.style.transitionDelay = (Math.min(i, 5) * 90) + 'ms';
-                revealObserver.observe(child);
+        const units = [];
+        document.querySelectorAll('section[id]:not(#home), footer').forEach((scope) => {
+            collectUnits(scope, units);
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            const batch = entries.filter((e) => e.isIntersecting);
+            if (!batch.length) return;
+            batch.sort((a, b) => {
+                if (a.target === b.target) return 0;
+                return (a.target.compareDocumentPosition(b.target) &
+                    Node.DOCUMENT_POSITION_FOLLOWING) ? -1 : 1;
             });
+            batch.forEach((entry, i) => {
+                revealObserver.unobserve(entry.target);
+                entry.target.style.transitionDelay = (Math.min(i, 6) * STAGGER_MS) + 'ms';
+                entry.target.classList.add('rv-in');
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
+
+        units.forEach((el) => {
+            el.classList.add('rv');
+            revealObserver.observe(el);
         });
     }
 
