@@ -953,3 +953,85 @@ code, kbd, samp, pre, .font-mono {
         animation: none !important;
     }
 }
+
+/* ============================================================
+   CONTACT — PROFILE IDENTITY CARD
+   ============================================================ */
+.contact-photo-frame {
+    flex-shrink: 0;
+    width: 96px;
+    height: 128px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-rule);
+    background: var(--color-paper-3);
+    position: relative;
+}
+
+.contact-photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.contact-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 25%, transparent);
+    pointer-events: none;
+}
+
+.contact-photo-frame:hover img {
+    transform: scale(1.05);
+}
+
+.contact-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+    border: 1px solid color-mix(in oklch, var(--color-accent) 30%, transparent);
+    background: color-mix(in oklch, var(--color-accent) 8%, transparent);
+    border-radius: var(--radius-pill);
+    padding: 0.3rem 0.7rem;
+}
+
+.contact-status-pill .status-beacon {
+    animation: beacon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes beacon-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px #10b981; }
+    50% { opacity: 0.55; box-shadow: 0 0 3px #10b981; }
+}
+
+/* Contact link rows: accent-border lift on hover */
+.contact-link-row {
+    transition: border-color var(--dur-short) var(--ease-out),
+                transform 0.25s var(--ease-out),
+                box-shadow 0.25s var(--ease-out);
+}
+
+.contact-link-row:hover {
+    border-color: color-mix(in oklch, var(--color-accent) 45%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px -16px rgba(13, 148, 136, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-photo-frame:hover img,
+    .contact-link-row:hover {
+        transform: none !important;
+    }
+    .contact-status-pill .status-beacon {
+        animation: none !important;
+    }
+}
