@@ -32,7 +32,7 @@ Hi there! I'm **Pankaj Kumawat**, a **Software Engineer** from **Jaipur, Rajasth
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-pankajkumawat.in-0d9488?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pankajkumawat.in)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pankajkumawat9950/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pankajkumawat)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pankajkumawatofficial)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pankajkumawat/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pankajkumawat2023@gmail.com)
 
