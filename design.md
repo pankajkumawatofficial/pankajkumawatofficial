@@ -52,7 +52,7 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 - **Focus Rings**: Instant visible focus ring (`outline: 2px solid var(--color-focus); outline-offset: 2px`).
 
 ## Nav & Footer Archetypes
-- **Nav**: **N5 Floating Pill** — content-sized, detached from edges, solid obsidian/light surface with 1px hairline border and subtle shadow.
+- **Nav**: **N5 Floating Pill** — content-sized, detached from edges, solid obsidian/light surface with 1px hairline border and subtle shadow. Responsive: full link row from 1024px (tightened spacing ≤1160px, `nowrap` links, pill capped at `max-width: 100%`); below 1024px the links collapse into an animated drawer (fade/slide-down, dimmed backdrop, closes on backdrop click, link tap, Escape, or resize-to-desktop, body scroll locked while open) with a 40px hamburger; tap targets ≥36px.
 - **Footer**: **Ft2 Inline Single Line / Technical Colophon** — system status indicator, Python/scikit-learn version tags, and direct engineering endpoints.
 
 ## Exports
