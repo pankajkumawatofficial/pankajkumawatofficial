@@ -176,7 +176,7 @@
                             <div class="text-[var(--color-ink-muted)] text-[11px] mt-0.5">ML &amp; data science</div>
                         </div>
                         <div class="p-3 bg-[var(--color-paper-2)] border border-[var(--color-rule)] rounded-lg">
-                            <div class="text-[var(--color-accent)] font-bold text-sm">6 Built</div>
+                            <div class="text-[var(--color-accent)] font-bold text-sm">3 Built</div>
                             <div class="text-[var(--color-ink-muted)] text-[11px] mt-0.5">Projects shipped</div>
                         </div>
                     </div>
@@ -202,47 +202,40 @@
                 <div class="code-workbench">
                     <div class="code-header">
                         <div class="code-tabs">
-                            <button class="code-tab-btn active" data-tab="model">model.py</button>
+                            <button class="code-tab-btn active" data-tab="model">pipeline.py</button>
                             <button class="code-tab-btn" data-tab="run">run.sh</button>
                             <button class="code-tab-btn" data-tab="response">report.json</button>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="response-chip-status">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                200 OK
-                            </span>
-                            <span id="workbenchLatency" class="text-[11px] text-[var(--color-ink-muted)] font-mono">1.8ms</span>
+                            <span class="text-[11px] text-[var(--color-ink-muted)] font-mono">run <span id="workbenchLatency">1.8ms</span></span>
                         </div>
                     </div>
 
-                    <!-- Code Tab 1: Python ML Pipeline Source -->
+                    <!-- Code Tab 1: Software-Engineer-Style Training Module -->
                     <div id="tab-model" class="code-pane code-body">
-                        <pre><code><span class="syn-kw">from</span> sklearn.ensemble <span class="syn-kw">import</span> RandomForestRegressor
+                        <pre><code><span class="syn-kw">from</span> dataclasses <span class="syn-kw">import</span> dataclass
+<span class="syn-kw">from</span> sklearn.ensemble <span class="syn-kw">import</span> RandomForestRegressor
 <span class="syn-kw">from</span> sklearn.model_selection <span class="syn-kw">import</span> train_test_split
-<span class="syn-kw">import</span> pandas <span class="syn-kw">as</span> pd
 
-df = pd.read_csv(<span class="syn-str">"house_prices.csv"</span>)
-X = df.drop(columns=[<span class="syn-str">"price"</span>])
-y = df[<span class="syn-str">"price"</span>]
+<span class="syn-dec">@dataclass</span>(frozen=<span class="syn-kw">True</span>)
+<span class="syn-kw">class</span> <span class="syn-type">TrainConfig</span>:
+    test_size: float = <span class="syn-num">0.2</span>
+    n_estimators: int = <span class="syn-num">300</span>
+    max_depth: int = <span class="syn-num">18</span>
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=<span class="syn-number">0.2</span>, random_state=<span class="syn-number">42</span>
-)
-
-model = RandomForestRegressor(
-    n_estimators=<span class="syn-number">300</span>,
-    max_depth=<span class="syn-number">18</span>,
-    n_jobs=<span class="syn-number">-1</span>
-)
-model.fit(X_train, y_train)
-
-score = model.score(X_test, y_test)
-<span class="syn-cmt"># R² on held-out set + feature-importance export</span>
-<span class="syn-kw">print</span>(<span class="syn-str">f"R² score: {score:.4f}"</span>)
-importance = pd.Series(
-    model.feature_importances_, index=X.columns
-).sort_values(ascending=<span class="syn-kw">False</span>)
-importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str">"importance.csv"</span>)</code></pre>
+<span class="syn-kw">def</span> <span class="syn-fn">train</span>(df, cfg: TrainConfig) -&gt; tuple:
+    <span class="syn-str">"""Train and evaluate the house-price model."""</span>
+    X = df.drop(columns=[<span class="syn-str">"price"</span>])
+    y = df[<span class="syn-str">"price"</span>]
+    X_tr, X_te, y_tr, y_te = train_test_split(
+        X, y, test_size=cfg.test_size, random_state=<span class="syn-num">42</span>
+    )
+    model = RandomForestRegressor(
+        n_estimators=cfg.n_estimators,
+        max_depth=cfg.max_depth,
+        n_jobs=<span class="syn-num">-1</span>,
+    ).fit(X_tr, y_tr)
+    <span class="syn-kw">return</span> model, model.score(X_te, y_te)</code></pre>
                     </div>
 
                     <!-- Code Tab 2: CLI Run -->
@@ -260,7 +253,6 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
                     <!-- Code Tab 3: JSON Report Payload -->
                     <div id="tab-response" class="code-pane code-body hidden">
                         <pre><code id="responsePayload" class="text-emerald-400">{
-  "status": 200,
   "pipeline": "house_price_regression",
   "model": "RandomForestRegressor",
   "metrics": {
@@ -400,10 +392,10 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
             <div class="mb-14">
                 <div class="text-[11px] font-mono text-[var(--color-accent)] uppercase tracking-wider mb-2">02 // Project Portfolio</div>
                 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-ink)]">
-                    The 6 Projects I&rsquo;ve Built
+                    The 3 Projects I&rsquo;ve Built
                 </h2>
                 <p class="text-sm sm:text-base text-[var(--color-ink-muted)] mt-2 max-w-2xl">
-                    Real-world problems turned into working software — machine learning models, data analytics, and Python/Django web applications. Presented in detailed single-project showcases.
+                    High-value work only — machine learning models, data analytics, and a Python/Django web platform. Presented in detailed single-project showcases.
                 </p>
             </div>
 
@@ -660,257 +652,6 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
                     </div>
                 </article>
 
-                <hr class="project-divider">
-
-                <!-- PROJECT 4: InsightHub -->
-                <article class="tech-card p-6 sm:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="tech-pill tech-pill-accent">04 // Content Platform · Django</span>
-                                <span class="font-mono text-xs text-[var(--color-ink-subtle)]">Dec 2024 — Jan 2025</span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-[var(--color-ink)] mb-2 font-display">
-                                InsightHub — Blogging Platform
-                            </h3>
-                            <p class="text-xs font-mono text-[var(--color-accent)] mb-4">
-                                Dynamic blogging platform for creating, editing, and sharing posts with interactive commenting.
-                            </p>
-                            <p class="text-xs sm:text-sm text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-                                A user-friendly blogging platform that lets writers create, edit, and publish posts through a seamless reading experience. Built with Django and MySQL, with an engaging UI and interactive comment system that keeps readers part of the conversation.
-                            </p>
-
-                            <!-- Architectural Highlights -->
-                            <div class="mb-4">
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] mb-3">Key Highlights &amp; Approach</div>
-                                <ul class="space-y-2 text-xs text-[var(--color-ink-muted)]">
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Full Post Lifecycle:</strong> Create, edit, and share blog posts through a clean editorial interface.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Interactive Commenting:</strong> Reader engagement loop with moderated, threaded discussion.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Responsive Editorial UI:</strong> Bootstrap-driven layout optimized for reading on any device.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Technical Specs & CTAs Sidebar -->
-                        <div class="lg:col-span-4 flex flex-col justify-between p-5 bg-[var(--color-paper-3)] border border-[var(--color-rule)] rounded-xl">
-                            <div>
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-ink)] mb-3">System Specifications</div>
-                                <div class="space-y-2 font-mono text-xs mb-6">
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Framework</span>
-                                        <span class="text-[var(--color-accent)]">Python · Django</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Database</span>
-                                        <span class="text-[var(--color-ink)]">MySQL</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Frontend</span>
-                                        <span class="text-[var(--color-ink)]">HTML · CSS · Bootstrap</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Engagement</span>
-                                        <span class="text-[var(--color-ink)]">Comment System</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-[var(--color-ink-subtle)]">Experience</span>
-                                        <span class="text-[var(--color-ink)]">Reading-First UI</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3">
-                                    <a href="https://github.com/pankajkumawat" target="_blank" rel="noopener" class="btn-terminal w-full justify-center">
-                                        <span class="iconify" data-icon="lucide:github" data-width="13"></span> Source Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marquee Ticker for Project 4 -->
-                    <div class="marquee-strip mt-6 rounded-lg">
-                        <marquee behavior="scroll" direction="left" scrollamount="6" class="font-mono text-xs text-[var(--color-ink-muted)] py-0.5">
-                            ⚡ Create · Edit · Publish Workflow &bull; 💬 Interactive Comment Threads &bull; 📖 Reading-First Editorial Design &bull; 🐘 Django + MySQL Content Engine &bull; 📱 Fully Responsive
-                        </marquee>
-                    </div>
-                </article>
-
-                <hr class="project-divider">
-
-                <!-- PROJECT 5: SmartTask -->
-                <article class="tech-card p-6 sm:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="tech-pill tech-pill-accent">05 // Productivity App · Django</span>
-                                <span class="font-mono text-xs text-[var(--color-ink-subtle)]">Jan 2025 — Feb 2025</span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-[var(--color-ink)] mb-2 font-display">
-                                SmartTask — Task Management Web App
-                            </h3>
-                            <p class="text-xs font-mono text-[var(--color-accent)] mb-4">
-                                Responsive task manager for creating, updating, deleting, and completing tasks with a smooth UX.
-                            </p>
-                            <p class="text-xs sm:text-sm text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-                                A responsive productivity application designed to help users organize tasks efficiently. Create, update, delete, and mark tasks as completed with instant feedback and a clean, distraction-free interface powered by Django and JavaScript.
-                            </p>
-
-                            <!-- Architectural Highlights -->
-                            <div class="mb-4">
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] mb-3">Key Highlights &amp; Approach</div>
-                                <ul class="space-y-2 text-xs text-[var(--color-ink-muted)]">
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Complete Task CRUD:</strong> Create, update, delete, and completion states managed on the server.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Smooth Interaction UX:</strong> JavaScript-driven interactions with immediate visual feedback on every action.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Responsive Layout:</strong> Mobile-first daily task board that works from any device.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Technical Specs & CTAs Sidebar -->
-                        <div class="lg:col-span-4 flex flex-col justify-between p-5 bg-[var(--color-paper-3)] border border-[var(--color-rule)] rounded-xl">
-                            <div>
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-ink)] mb-3">System Specifications</div>
-                                <div class="space-y-2 font-mono text-xs mb-6">
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Framework</span>
-                                        <span class="text-[var(--color-accent)]">Python · Django</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Interactions</span>
-                                        <span class="text-[var(--color-ink)]">JavaScript</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Frontend</span>
-                                        <span class="text-[var(--color-ink)]">HTML · CSS · Bootstrap</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">States</span>
-                                        <span class="text-[var(--color-ink)]">Pending · Completed</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-[var(--color-ink-subtle)]">Design</span>
-                                        <span class="text-[var(--color-ink)]">Mobile-First</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3">
-                                    <a href="https://github.com/pankajkumawat" target="_blank" rel="noopener" class="btn-terminal w-full justify-center">
-                                        <span class="iconify" data-icon="lucide:github" data-width="13"></span> Source Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marquee Ticker for Project 5 -->
-                    <div class="marquee-strip mt-6 rounded-lg">
-                        <marquee behavior="scroll" direction="left" scrollamount="6" class="font-mono text-xs text-[var(--color-ink-muted)] py-0.5">
-                            ⚡ Full Task CRUD Lifecycle &bull; 🖱️ Instant-Feedback Interactions &bull; 📱 Mobile-First Responsive Board &bull; 🎯 Completion Tracking &bull; 🐘 Django + JavaScript
-                        </marquee>
-                    </div>
-                </article>
-
-                <hr class="project-divider">
-
-                <!-- PROJECT 6: WeatherVista -->
-                <article class="tech-card p-6 sm:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="tech-pill tech-pill-accent">06 // Web App · API Integration</span>
-                                <span class="font-mono text-xs text-[var(--color-ink-subtle)]">Feb 2025 — Mar 2025</span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-[var(--color-ink)] mb-2 font-display">
-                                WeatherVista — Real-Time Weather Application
-                            </h3>
-                            <p class="text-xs font-mono text-[var(--color-accent)] mb-4">
-                                Responsive weather app with OpenWeatherMap API data and dynamic city imagery via Google Search Engine API.
-                            </p>
-                            <p class="text-xs sm:text-sm text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-                                A responsive weather application delivering real-time conditions for any city worldwide. Integrates the OpenWeatherMap API for accurate weather data and the Google Search Engine API to dynamically render imagery of the searched city — keeping every interaction fast and engaging.
-                            </p>
-
-                            <!-- Architectural Highlights -->
-                            <div class="mb-4">
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] mb-3">Key Highlights &amp; Approach</div>
-                                <ul class="space-y-2 text-xs text-[var(--color-ink-muted)]">
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Live Weather Data:</strong> OpenWeatherMap API integration for current conditions in any city worldwide.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Dynamic City Imagery:</strong> Google Search Engine API renders contextual photos for every location searched.
-                                    </li>
-                                    <li class="arch-bullet">
-                                        <strong class="text-[var(--color-ink)]">Responsive Experience:</strong> Clean, mobile-first weather dashboard with fast API response handling.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Technical Specs & CTAs Sidebar -->
-                        <div class="lg:col-span-4 flex flex-col justify-between p-5 bg-[var(--color-paper-3)] border border-[var(--color-rule)] rounded-xl">
-                            <div>
-                                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--color-ink)] mb-3">System Specifications</div>
-                                <div class="space-y-2 font-mono text-xs mb-6">
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Framework</span>
-                                        <span class="text-[var(--color-accent)]">Python · Django</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Weather Data</span>
-                                        <span class="text-[var(--color-ink)]">OpenWeatherMap API</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Imagery</span>
-                                        <span class="text-[var(--color-ink)]">Google Search API</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-[var(--color-rule-subtle)]">
-                                        <span class="text-[var(--color-ink-subtle)]">Frontend</span>
-                                        <span class="text-[var(--color-ink)]">HTML · CSS · JavaScript</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-[var(--color-ink-subtle)]">Coverage</span>
-                                        <span class="text-[var(--color-ink)]">Any City Worldwide</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3">
-                                    <a href="https://github.com/pankajkumawat" target="_blank" rel="noopener" class="btn-terminal w-full justify-center">
-                                        <span class="iconify" data-icon="lucide:github" data-width="13"></span> Source Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marquee Ticker for Project 6 -->
-                    <div class="marquee-strip mt-6 rounded-lg">
-                        <marquee behavior="scroll" direction="left" scrollamount="6" class="font-mono text-xs text-[var(--color-ink-muted)] py-0.5">
-                            ⚡ OpenWeatherMap API Integration &bull; 🖼️ Dynamic City Imagery via Google API &bull; 🌍 Global City Coverage &bull; ⚡ Real-Time Updates &bull; 📱 Responsive Weather Dashboard
-                        </marquee>
-                    </div>
-                </article>
 
             </div>
         </section>
@@ -1274,7 +1015,7 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
                             </div>
                             <div class="flex items-start gap-2">
                                 <span class="text-[var(--color-accent)] font-mono">▸</span>
-                                <span><strong class="text-[var(--color-ink)]">Capstone Output:</strong> Built ConnectSphere, InsightHub, SmartTask, and WeatherVista as coursework-to-production projects.</span>
+                                <span><strong class="text-[var(--color-ink)]">Capstone Output:</strong> Built ConnectSphere — a coursework-to-production Django social platform.</span>
                             </div>
                         </div>
                     </div>
@@ -1324,7 +1065,7 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
                             My process starts with clean, well-understood data. I build predictive models that generalise beyond the training set, then wrap them in applications people can actually use — balancing statistical rigor with pragmatic, maintainable engineering.
                         </p>
                         <p>
-                            Across six projects — House Price Prediction, Customer Churn Analysis, ConnectSphere, InsightHub, SmartTask, and WeatherVista — I&rsquo;ve turned real problems into working software: from regression pipelines to Django platforms with secure authentication and real-time API integrations.
+                            Across three projects — House Price Prediction, Customer Churn Analysis, and ConnectSphere — I&rsquo;ve turned real problems into working software: from regression pipelines to a Django platform with secure authentication and a real-time social graph.
                         </p>
                         <p>
                             When I&rsquo;m not coding, you&rsquo;ll find me reading about AI/ML trends and software engineering, exploring new data-science tools and machine-learning frameworks, or solving interesting programming problems.
@@ -1470,7 +1211,7 @@ importance.head(<span class="syn-number">10</span>).to_csv(<span class="syn-str"
                 <div class="tech-card">
                     <h3 class="text-sm font-bold text-[var(--color-ink)] mb-2 font-display">What kind of projects has Pankaj Kumawat built?</h3>
                     <p class="text-xs text-[var(--color-ink-muted)] leading-relaxed">
-                        Six projects spanning the full stack: House Price Prediction and Customer Churn Analysis (AI/ML and data analytics), and ConnectSphere, InsightHub, SmartTask, and WeatherVista (Python/Django web applications with authentication, CRUD systems, and live API integrations).
+                        Three focused projects: House Price Prediction and Customer Churn Analysis (AI/ML and data analytics), and ConnectSphere (a Python/Django social platform with authentication and real-time interactions).
                     </p>
                 </div>
 

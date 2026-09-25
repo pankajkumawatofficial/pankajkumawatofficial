@@ -175,14 +175,14 @@ code, kbd, samp, pre, .font-mono {
 .hero-workbench-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: start;
 }
 
 @media (min-width: 1024px) {
     .hero-workbench-grid {
-        grid-template-columns: 1fr 1.1fr;
-        gap: 3.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
     }
 }
 
@@ -235,10 +235,12 @@ code, kbd, samp, pre, .font-mono {
 }
 
 .code-body {
-    padding: 1.25rem;
+    padding: 1rem 1.1rem;
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    line-height: 1.7;
+    font-size: 0.75rem;
+    line-height: 1.65;
+    max-height: 380px;
+    overflow-y: auto;
     overflow-x: auto;
 }
 

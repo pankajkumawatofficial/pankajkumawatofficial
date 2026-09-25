@@ -133,18 +133,6 @@ PROJECTS BUILT
    Social media app with secure auth, profiles, posts/follows/likes/comments.
    Stack: Python, Django, HTML, CSS, Bootstrap, MySQL.
 
-4. InsightHub — (Dec 2024 - Jan 2025)
-   Blogging platform with full post lifecycle + interactive commenting.
-   Stack: Python, Django, HTML, CSS, Bootstrap, MySQL.
-
-5. SmartTask — (Jan 2025 - Feb 2025)
-   Responsive task management app (create/update/delete/complete).
-   Stack: Python, Django, HTML, CSS, Bootstrap, JavaScript.
-
-6. WeatherVista — (Feb 2025 - Mar 2025)
-   Real-time weather app (OpenWeatherMap API) with dynamic city imagery.
-   Stack: Python, Django, OpenWeatherMap API, Google API, JavaScript.
-
 --------------------------------------------------------------------------------
 EDUCATION & CERTIFICATIONS
 --------------------------------------------------------------------------------
@@ -183,8 +171,6 @@ Generated via ML pipeline report at ${new Date().toISOString()}
                 // Build response payload
                 const now = new Date().toISOString();
                 const samplePayload = {
-                    status: 200,
-                    status_text: "OK",
                     pipeline: "house_price_regression",
                     model: "RandomForestRegressor",
                     metrics: {
@@ -194,7 +180,6 @@ Generated via ML pipeline report at ${new Date().toISOString()}
                         cv_mean: 0.9138,
                         cv_std: 0.0182
                     },
-                    endpoint: "/v1/ml/pipeline/run?dataset=house_prices",
                     telemetry: {
                         latency_ms: parseFloat(simulatedLatency),
                         runtime: "scikit-learn 1.5 / Python 3.12",
@@ -208,7 +193,7 @@ Generated via ML pipeline report at ${new Date().toISOString()}
                         location: "Jaipur, Rajasthan, India",
                         availability: "Open to Software Engineer, AI/ML & Data Science roles",
                         contact: "pankajkumawat2023@gmail.com",
-                        projects_built: 6,
+                        projects_built: 3,
                         github: "https://github.com/pankajkumawat"
                     },
                     download_status: "initiated",
