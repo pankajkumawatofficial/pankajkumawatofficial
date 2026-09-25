@@ -7,9 +7,9 @@
 </p>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=pankajkumawat&label=Profile+Views&color=0d9488&style=for-the-badge" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/pankajkumawat?label=Followers&style=for-the-badge&color=0d9488" alt="GitHub Followers" />
-  <img src="https://img.shields.io/github/stars/pankajkumawat?label=Total+Stars&style=for-the-badge&color=0d9488" alt="GitHub Stars" />
+  <img src="https://komarev.com/ghpvc/?username=pankajkumawatofficial&label=Profile+Views&color=0d9488&style=for-the-badge" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/pankajkumawatofficial?label=Followers&style=for-the-badge&color=0d9488" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/pankajkumawatofficial?label=Total+Stars&style=for-the-badge&color=0d9488" alt="GitHub Stars" />
 </div>
 
 ---
@@ -33,7 +33,7 @@ Hi there! I'm **Pankaj Kumawat**, a **Software Engineer** from **Jaipur, Rajasth
 [![Portfolio](https://img.shields.io/badge/Portfolio-pankajkumawat.in-0d9488?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pankajkumawat.in)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pankajkumawat9950/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pankajkumawatofficial)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pankajkumawat/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pankaj_kumawat9950/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pankajkumawat2023@gmail.com)
 
 </div>
@@ -73,9 +73,9 @@ Hi there! I'm **Pankaj Kumawat**, a **Software Engineer** from **Jaipur, Rajasth
 
 <div align="center">
 
-[![Pankaj Kumawat's GitHub Stats](https://github-readme-stats.vercel.app/api?username=pankajkumawat&show_icons=true&theme=radical&hide_border=true)](https://github.com/pankajkumawat)
+[![Pankaj Kumawat's GitHub Stats](https://github-readme-stats.vercel.app/api?username=pankajkumawatofficial&show_icons=true&theme=radical&hide_border=true)](https://github.com/pankajkumawatofficial)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pankajkumawat&layout=compact&theme=radical&hide_border=true)](https://github.com/pankajkumawat)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pankajkumawat&layout=compact&theme=radical&hide_border=true)](https://github.com/pankajkumawatofficial)
 
 </div>
 
@@ -129,7 +129,7 @@ I'm always happy to collaborate on interesting projects or chat about tech! Feel
 
 🌐 **Website:** [pankajkumawat.in](https://pankajkumawat.in)  
 📧 **Email:** [pankajkumawat2023@gmail.com](mailto:pankajkumawat2023@gmail.com)  
-🤝 **Connect:** [LinkedIn](https://www.linkedin.com/in/pankajkumawat9950/) · [GitHub](https://github.com/pankajkumawat)
+🤝 **Connect:** [LinkedIn](https://www.linkedin.com/in/pankajkumawat9950/) · [GitHub](https://github.com/pankajkumawatofficial)
 
 **"Code is like humor. When you have to explain it, it's bad!" — Cory House**
 
