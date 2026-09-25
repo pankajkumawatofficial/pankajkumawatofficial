@@ -99,7 +99,7 @@
     function openResumePdf() {
         // Open the real PDF resume (stored in /resume) in a new browser tab
         const resumeAnchor = document.createElement('a');
-        resumeAnchor.href = 'resume/Pankaj_Kumawat_Software_Engineer_Resume.pdf';
+        resumeAnchor.href = 'resume/Pankaj_Kumawat.pdf';
         resumeAnchor.target = '_blank';
         resumeAnchor.rel = 'noopener';
         document.body.appendChild(resumeAnchor);
