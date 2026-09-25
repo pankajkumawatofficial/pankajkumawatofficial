@@ -1,5 +1,5 @@
 // ============================================================
-// Lucky Yaduvanshi Official — FastAPI Portfolio Scripts
+// Pankaj Kumawat Official — Software Engineer Portfolio Scripts
 // Hallmark modern-minimal workbench microinteractions
 // ============================================================
 
@@ -16,7 +16,7 @@
     const themeToggle = document.getElementById('themeToggle');
 
     // Apply saved theme or system preference on load
-    const savedTheme = localStorage.getItem('lky-theme');
+    const savedTheme = localStorage.getItem('pk-theme');
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
     if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
@@ -43,11 +43,11 @@
             if (willBeLight) {
                 html.classList.add('light');
                 html.classList.remove('dark');
-                localStorage.setItem('lky-theme', 'light');
+                localStorage.setItem('pk-theme', 'light');
             } else {
                 html.classList.add('dark');
                 html.classList.remove('light');
-                localStorage.setItem('lky-theme', 'dark');
+                localStorage.setItem('pk-theme', 'dark');
             }
             updateThemeIcon();
         });
@@ -76,7 +76,7 @@
         });
     }
 
-    // ---- FastAPI Workbench Code Tabs ----
+    // ---- Workbench Code Tabs ----
     const tabButtons = document.querySelectorAll('.code-tab-btn');
     const tabPanes = document.querySelectorAll('.code-pane');
 
@@ -91,73 +91,75 @@
         });
     });
 
-    // ---- Creative Resume Download / Stream API Endpoint Simulator ----
+    // ---- ML Pipeline Run / Resume Export Simulator ----
     const testBtn = document.getElementById('btnTestEndpoint');
     const latencyEl = document.getElementById('workbenchLatency');
     const responsePayloadEl = document.getElementById('responsePayload');
 
     function triggerResumeDownload() {
-        // Generate a cleanly formatted technical resume snapshot text/markdown file
+        // Generate a cleanly formatted technical resume snapshot text file
         const resumeContent = `================================================================================
-LUCKY YADUVANSHI — PYTHON FASTAPI BACKEND ENGINEER
+PANKAJ KUMAWAT — SOFTWARE ENGINEER
 ================================================================================
 Location: Jaipur, Rajasthan, India
-Email: contact@luckyyaduvanshi.in
-GitHub: https://github.com/Luckyyaduvanshiofficial
-LinkedIn: https://linkedin.com/in/lucky-yaduvanshi
-Portfolio: https://luckyyaduvanshi.in
+Email: pankajkumawat2023@gmail.com
+GitHub: https://github.com/pankajkumawat
+LinkedIn: https://linkedin.com/in/pankajkumawat9950
+Portfolio: https://pankajkumawat.in
 
 --------------------------------------------------------------------------------
-CORE COMPETENCIES & TECHNICAL ARCHITECTURE
+ROLES & CORE COMPETENCIES
 --------------------------------------------------------------------------------
-- Frameworks & Runtimes: FastAPI, Python 3.12+, ASGI, UVloop, AnyIO, Pydantic v2
-- Databases & ORM: PostgreSQL, SQLAlchemy 2.0 Async, Alembic, SQLite WAL, Redis
-- Low-Level Systems: C++ (llama.cpp), GGUF Quantization (Q4_K_M), AVX2 SIMD, Win32 API
-- DevOps & Tools: Docker, Podman, Nginx reverse proxy, Linux systemd, GitHub Actions CI/CD
-- Concurrency & Security: asyncio.Lock barriers, SHA-256 state hashing, HMAC validation
+- Software Engineer | AI/ML Engineer | Data Scientist | Backend Engineer
+- Machine Learning: regression/classification pipelines, feature engineering,
+  model selection & evaluation (scikit-learn)
+- Data Science: EDA, data cleaning, predictive modeling, insight generation
+  (pandas, NumPy, Matplotlib, Seaborn)
+- Backend: Python/Django MVC apps, session auth, REST-style data flows
+- Frontend: HTML5, CSS3, Bootstrap, JavaScript (responsive interfaces)
 
 --------------------------------------------------------------------------------
-SHIPPED PRODUCTION SYSTEMS (CODAIPRO)
+PROJECTS BUILT
 --------------------------------------------------------------------------------
-1. CodAI — 100% Offline AI Coding Assistant
-   - Decoupled 4-layer architecture running localized GGUF models on CPU via C++ llama.cpp.
-   - Win32 Named Mutex and PID lock guards preventing orphaned background processes.
+1. House Price Prediction — (Mar 2025 - Apr 2025)
+   ML regression model predicting house prices from location, size, amenities.
+   Stack: Python, scikit-learn, pandas, NumPy.
 
-2. WA OTP — WhatsApp & Telegram Phone Verification Gateway
-   - Two-endpoint verification gateway bypassing India TRAI DLT registration.
-   - Strict asyncio.Lock concurrency isolation preventing quota bypass race conditions.
+2. Customer Churn Analysis — (Apr 2025 - May 2025)
+   Classification project predicting churn risk + actionable retention insights.
+   Stack: Python, ML, pandas, Matplotlib, Seaborn.
 
-3. TempMail — Disposable Email & Live SSE Streaming API
-   - Event-driven Server-Sent Events push feed (<500ms latency) with zero client polling.
-   - Automated regex MIME parser extracting verification codes from raw HTML payloads.
+3. ConnectSphere — (Nov 2024 - Dec 2024)
+   Social media app with secure auth, profiles, posts/follows/likes/comments.
+   Stack: Python, Django, HTML, CSS, Bootstrap, MySQL.
 
-4. AutoDM — Instagram DM Automation Platform
-   - Resilient webhook consumer with token-bucket jittered rate-limiter for Meta Graph API.
-   - Repeat-protection deduplication ledger preventing redundant automated direct messages.
+4. InsightHub — (Dec 2024 - Jan 2025)
+   Blogging platform with full post lifecycle + interactive commenting.
+   Stack: Python, Django, HTML, CSS, Bootstrap, MySQL.
 
-5. LLMs.txt Generator — AI Search Crawler & Validator
-   - Asynchronous sitemap crawler stripping boilerplate into llms.txt standard files.
+5. SmartTask — (Jan 2025 - Feb 2025)
+   Responsive task management app (create/update/delete/complete).
+   Stack: Python, Django, HTML, CSS, Bootstrap, JavaScript.
 
-6. RankLLMs — AI Model Benchmark & Comparison Engine
-   - Multi-metric benchmark normalization pipeline tracking 80+ AI models at the edge.
+6. WeatherVista — (Feb 2025 - Mar 2025)
+   Real-time weather app (OpenWeatherMap API) with dynamic city imagery.
+   Stack: Python, Django, OpenWeatherMap API, Google API, JavaScript.
 
 --------------------------------------------------------------------------------
 EDUCATION & CERTIFICATIONS
 --------------------------------------------------------------------------------
-- Computer Science & Engineering (Core: Distributed Systems, DBMS, OS, Data Structures)
-- Python & FastAPI Backend Engineering Specialization
-- PostgreSQL Advanced Architecture & Database Design
-- Postman API Fundamentals Student Expert
-- Docker Containerization & Microservices
+- MCA: Computer Science — University of Rajasthan (2025 - Present, pursuing)
+- BCA: Computer Science — University Commerce College, Jaipur (7.4 CGPA)
+- Python Developer Certification — TechnoGlobe, Jaipur (2024 - 2025)
 
-Generated via FastAPI /v1/developer/lucky/resume stream at ${new Date().toISOString()}
+Generated via ML pipeline report at ${new Date().toISOString()}
 ================================================================================`;
 
         const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
         const downloadUrl = URL.createObjectURL(blob);
         const downloadAnchor = document.createElement('a');
         downloadAnchor.href = downloadUrl;
-        downloadAnchor.download = 'Lucky_Yaduvanshi_FastAPI_Resume.txt';
+        downloadAnchor.download = 'Pankaj_Kumawat_Software_Engineer_Resume.txt';
         document.body.appendChild(downloadAnchor);
         downloadAnchor.click();
         document.body.removeChild(downloadAnchor);
@@ -167,9 +169,9 @@ Generated via FastAPI /v1/developer/lucky/resume stream at ${new Date().toISOStr
     if (testBtn && latencyEl && responsePayloadEl) {
         testBtn.addEventListener('click', () => {
             testBtn.disabled = true;
-            testBtn.innerHTML = '<span class="animate-spin inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full mr-1.5"></span> Streaming...';
+            testBtn.innerHTML = '<span class="animate-spin inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full mr-1.5"></span> Training...';
 
-            // Simulate sub-3ms async streaming coroutine execution
+            // Simulate sub-3ms async pipeline execution
             setTimeout(() => {
                 const simulatedLatency = (Math.random() * 1.8 + 1.2).toFixed(1);
                 latencyEl.textContent = `${simulatedLatency}ms`;
@@ -183,36 +185,42 @@ Generated via FastAPI /v1/developer/lucky/resume stream at ${new Date().toISOStr
                 const samplePayload = {
                     status: 200,
                     status_text: "OK",
-                    stream_type: "application/octet-stream",
-                    content_disposition: "attachment; filename=\"Lucky_Yaduvanshi_FastAPI_Resume.pdf\"",
-                    endpoint: "/v1/developer/lucky/resume?format=pdf&track=backend_systems",
+                    pipeline: "house_price_regression",
+                    model: "RandomForestRegressor",
+                    metrics: {
+                        r2_score: 0.9142,
+                        mae: 18420.55,
+                        rmse: 24710.83,
+                        cv_mean: 0.9138,
+                        cv_std: 0.0182
+                    },
+                    endpoint: "/v1/ml/pipeline/run?dataset=house_prices",
                     telemetry: {
                         latency_ms: parseFloat(simulatedLatency),
-                        runtime: "uvloop / Python 3.12.3",
-                        concurrency_mode: "asyncio.to_thread (non-blocking file stream)",
+                        runtime: "scikit-learn 1.5 / Python 3.12",
+                        concurrency_mode: "asyncio.to_thread (non-blocking training)",
                         cache_hit: true
                     },
-                    candidate: {
-                        name: "Lucky Yaduvanshi",
-                        role: "Python FastAPI Backend Engineer",
-                        specialization: ["High-Throughput APIs", "PostgreSQL & SQLAlchemy", "Async Concurrency", "Docker"],
+                    engineer: {
+                        name: "Pankaj Kumawat",
+                        role: "Software Engineer",
+                        specialization: ["AI/ML Engineering", "Data Science & Analytics", "Python / Django Backend"],
                         location: "Jaipur, Rajasthan, India",
-                        availability: "Immediate for Backend & API Roles",
-                        contact: "contact@luckyyaduvanshi.in",
-                        shipped_production_products: 6,
-                        github: "https://github.com/Luckyyaduvanshiofficial"
+                        availability: "Open to Software Engineer, AI/ML & Data Science roles",
+                        contact: "pankajkumawat2023@gmail.com",
+                        projects_built: 6,
+                        github: "https://github.com/pankajkumawat"
                     },
                     download_status: "initiated",
-                    sha256_checksum: "a8f3b92c4e51786012d987e6fa543210bcdea9182374650fadcbe456712398ab",
                     generated_at: now
                 };
                 responsePayloadEl.textContent = JSON.stringify(samplePayload, null, 2);
 
-                // Auto-trigger the download
+                // Auto-trigger the resume download
                 triggerResumeDownload();
 
                 testBtn.disabled = false;
-                testBtn.innerHTML = '<span class="iconify mr-1" data-icon="lucide:download" data-width="12"></span> Re-download Resume';
+                testBtn.innerHTML = '<span class="iconify mr-1" data-icon="lucide:rotate-ccw" data-width="12"></span> Re-run Pipeline';
                 if (window.Iconify) window.Iconify.scan(testBtn);
             }, 360);
         });
@@ -259,7 +267,7 @@ Generated via FastAPI /v1/developer/lucky/resume stream at ${new Date().toISOStr
             setTimeout(() => {
                 formMessage.classList.remove('hidden');
                 formMessage.className = 'text-xs text-center py-2 px-4 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono mt-3';
-                formMessage.textContent = '✓ Inbound payload dispatched to Lucky Yaduvanshi. Response ETA: < 24h.';
+                formMessage.textContent = '✓ Inbound payload dispatched to Pankaj Kumawat. Response ETA: < 24h.';
                 contactForm.reset();
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<span class="iconify" data-icon="lucide:send" data-width="14"></span> Dispatch Inbound Message';

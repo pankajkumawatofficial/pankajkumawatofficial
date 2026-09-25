@@ -1,28 +1,28 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2800&pause=1500&color=0D9488&center=true&vCenter=true&width=900&lines=Hi+there!+I'm+Lucky+Yaduvanshi+%F0%9F%91%8B;Python+FastAPI+Developer;Backend+%2B+Astro.js+Frontend;Building+Scalable+Systems+%F0%9F%9A%80;Welcome+to+my+GitHub+profile!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2800&pause=1500&color=0D9488&center=true&vCenter=true&width=900&lines=Hi+there!+I'm+Pankaj+Kumawat+%F0%9F%91%8B;Software+Engineer;AI%2FML+Engineer+%C2%B7+Data+Scientist;Python+%2B+Django+Developer;Welcome+to+my+GitHub+profile!" alt="Typing SVG" />
 </div>
 
 <p align="center">
-  🔭 Backend Developer from <strong>Jaipur, Rajasthan, India</strong> 🇮🇳 &nbsp;•&nbsp; 💼 Founder of <strong>codaipro.com</strong>
+  🔭 Software Engineer from <strong>Jaipur, Rajasthan, India</strong> 🇮🇳 &nbsp;•&nbsp; 🎓 MCA @ University of Rajasthan
 </p>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Luckyyaduvanshiofficial&label=Profile+Views&color=0d9488&style=for-the-badge" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/Luckyyaduvanshiofficial?label=Followers&style=for-the-badge&color=0d9488" alt="GitHub Followers" />
-  <img src="https://img.shields.io/github/stars/Luckyyaduvanshiofficial?label=Total+Stars&style=for-the-badge&color=0d9488" alt="GitHub Stars" />
+  <img src="https://komarev.com/ghpvc/?username=pankajkumawat&label=Profile+Views&color=0d9488&style=for-the-badge" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/pankajkumawat?label=Followers&style=for-the-badge&color=0d9488" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/pankajkumawat?label=Total+Stars&style=for-the-badge&color=0d9488" alt="GitHub Stars" />
 </div>
 
 ---
 
 ## 🙋 About Me
 
-Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur, Rajasthan** 🇮🇳. I build high-performance, production-ready backend systems — fast APIs, clean SQL database design, and reliable server infrastructure — with an **Astro.js** frontend for fast, SEO-friendly experiences.
+Hi there! I'm **Pankaj Kumawat**, a **Software Engineer** from **Jaipur, Rajasthan** 🇮🇳. I build intelligent, data-driven web applications — combining **Python/Django** backends with **machine learning** models and solid **data science** practices.
 
-- 🔭 Currently building **FastAPI backends** and **scalable web applications**
-- 🌱 Learning **Advanced FastAPI**, **Cloud (AWS)**, and modern **Astro.js** patterns
-- 👯 Open to collaborating on **open-source projects** and **backend/API tooling**
-- 💬 Ask me about **Python, FastAPI, SQL/PostgreSQL, Docker, and Astro.js**
-- ⚡ Fun fact: I built my own **Autodm and Whatsapp OTP Verifaction** 
+- 🔭 Building full-stack applications with **Django** and **ML-powered features**
+- 🌱 Currently pursuing **MCA** at the **University of Rajasthan**
+- 👯 Open to collaborating on **ML/data science projects** and **Python web development**
+- 💬 Ask me about **Python, Django, Machine Learning, Data Science, and REST APIs**
+- 🎓 BCA (2022–2025) from University Commerce College · Python Developer Certificate from TechnoGlobe (2024–2025)
 
 ---
 
@@ -30,12 +30,11 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-luckyyaduvanshi.in-0d9488?style=for-the-badge&logo=google-chrome&logoColor=white)](https://luckyyaduvanshi.in)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucky-yaduvanshi/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Luckyyaduvanshiofficial)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_lucky_yaduvanshi_official/)
-[![X / Twitter](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/luckyyaduvanshi)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@luckyyaduvanshiofficial)
+[![Portfolio](https://img.shields.io/badge/Portfolio-pankajkumawat.in-0d9488?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pankajkumawat.in)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pankajkumawat9950/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pankajkumawat)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pankajkumawat/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pankajkumawat2023@gmail.com)
 
 </div>
 
@@ -45,36 +44,26 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 
 <div align="center">
 
-**Languages**
+**Languages & Frameworks**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-**Backend & Frameworks**
+**AI/ML & Data Science**
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
 
-**Databases**
+**Databases & Tools**
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-**DevOps & Tools**
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
 </div>
 
@@ -84,43 +73,27 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 
 <div align="center">
 
-[![Lucky Yaduvanshi's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Luckyyaduvanshiofficial&show_icons=true&theme=radical&hide_border=true&count_private=true)](https://github.com/Luckyyaduvanshiofficial)
+[![Pankaj Kumawat's GitHub Stats](https://github-readme-stats.vercel.app/api?username=pankajkumawat&show_icons=true&theme=radical&hide_border=true)](https://github.com/pankajkumawat)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Luckyyaduvanshiofficial&layout=compact&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial)
-
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Luckyyaduvanshiofficial&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
-
----
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Luckyyaduvanshiofficial&theme=radical&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
-</div>
-
----
-
-## 🚀 Featured Projects
-
-<div align="center">
-
-[![BlogSpace Green](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=blogspace-Green&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/blogspace-Green)
-[![JARVIS Tony Stark](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=JARVIS-Tony-Stark&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/JARVIS-Tony-Stark)
-[![ProWriter codaipro.com](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=prowriter.codaipro.com&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/prowriter.codaipro.com)
-[![MiniAI Vibe](https://github-readme-stats.vercel.app/api/pin/?username=Luckyyaduvanshiofficial&repo=miniai-vibe&theme=radical&hide_border=true)](https://github.com/Luckyyaduvanshiofficial/miniai-vibe)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pankajkumawat&layout=compact&theme=radical&hide_border=true)](https://github.com/pankajkumawat)
 
 </div>
 
 ---
 
-## 📈 Contribution Graph
+## 🚀 Projects
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Luckyyaduvanshiofficial&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
+
+| Project | Description | Stack | Timeline |
+|---------|-------------|-------|----------|
+| **House Price Prediction** | ML regression model predicting house prices from property features | Python · scikit-learn · pandas | Mar–Apr 2025 |
+| **Customer Churn Analysis** | Classification pipeline flagging at-risk customers from historical data | Python · scikit-learn · EDA | Apr–May 2025 |
+| **WeatherVista** | Weather dashboard application with clean data presentation | Python · Django · APIs | Feb–Mar 2025 |
+| **SmartTask** | Task management web application with relational data models | Python · Django · MySQL | Jan–Feb 2025 |
+| **InsightHub** | Data analytics hub for exploratory analysis and BI-style reporting | Python · pandas · Django | Dec 2024–Jan 2025 |
+| **ConnectSphere** | Social connection platform with user authentication | Python · Django · MySQL | Nov–Dec 2024 |
+
 </div>
 
 ---
@@ -128,18 +101,21 @@ Hi there! I'm **Lucky Yaduvanshi**, a **Python FastAPI Developer** from **Jaipur
 ## 💻 About My Work
 
 ```javascript
-const luckyYaduvanshi = {
+const pankajKumawat = {
     location: "Jaipur, Rajasthan, India",
-    company: "codaipro.com",
-    role: "Python FastAPI Developer",
-    currentFocus: ["FastAPI Backends", "SQL Database Design", "REST APIs", "Astro.js Frontends"],
+    role: "Software Engineer",
+    focus: ["Python Web Development", "Machine Learning", "Data Science"],
     technologies: {
-        backend: ["Python", "FastAPI", "SQLAlchemy", "Docker"],
-        database: ["PostgreSQL", "MySQL", "Redis", "SQL"],
-        frontend: ["Astro.js", "TypeScript", "TailwindCSS"],
-        devOps: ["AWS", "GitHub Actions", "Linux"]
+        backend: ["Python", "Django"],
+        ml: ["scikit-learn", "pandas", "NumPy", "Matplotlib"],
+        database: ["MySQL", "SQL"],
+        frontend: ["JavaScript", "HTML5", "CSS3", "Bootstrap"]
     },
-    currentlyLearning: ["Advanced FastAPI", "Cloud Architecture", "Astro.js"]
+    currentlyLearning: ["Advanced Machine Learning", "Deep Learning", "Data Engineering"],
+    education: {
+        mca: "University of Rajasthan (2025 - present)",
+        bca: "University Commerce College (2022 - 2025, 7.4 CGPA)"
+    }
 };
 ```
 
@@ -151,9 +127,9 @@ const luckyYaduvanshi = {
 
 I'm always happy to collaborate on interesting projects or chat about tech! Feel free to reach out:
 
-🌐 **Website:** [luckyyaduvanshi.in](https://luckyyaduvanshi.in)  
-💼 **Company:** codaipro.com  
-🤝 **Connect:** [LinkedIn](https://www.linkedin.com/in/lucky-yaduvanshi/)
+🌐 **Website:** [pankajkumawat.in](https://pankajkumawat.in)  
+📧 **Email:** [pankajkumawat2023@gmail.com](mailto:pankajkumawat2023@gmail.com)  
+🤝 **Connect:** [LinkedIn](https://www.linkedin.com/in/pankajkumawat9950/) · [GitHub](https://github.com/pankajkumawat)
 
 **"Code is like humor. When you have to explain it, it's bad!" — Cory House**
 

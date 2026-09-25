@@ -3,49 +3,45 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
     <url>
-        <loc>https://luckyyaduvanshi.in/</loc>
-        <lastmod>2026-09-03</lastmod>
+        <loc>https://pankajkumawat.in/</loc>
+        <lastmod>2026-09-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://luckyyaduvanshi.in/images/Lucky-main-1.png</image:loc>
-            <image:title>Lucky Yaduvanshi Python FastAPI Developer</image:title>
-            <image:caption>Lucky Yaduvanshi — Python FastAPI Developer from Jaipur, India specializing in Python, SQL, PostgreSQL, and API development</image:caption>
+            <image:loc>https://pankajkumawat.in/images/main-profile.webp</image:loc>
+            <image:title>Pankaj Kumawat Software Engineer</image:title>
+            <image:caption>Pankaj Kumawat — Software Engineer from Jaipur, India specializing in Python, Django, AI/ML, and Data Science</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://luckyyaduvanshi.in/images/lucky-main-2.png</image:loc>
-            <image:title>Lucky Yaduvanshi Professional Photo</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://luckyyaduvanshi.in/images/Lucky-colage.png</image:loc>
-            <image:title>Lucky Yaduvanshi Professional Collage</image:title>
+            <image:loc>https://pankajkumawat.in/images/workspace.webp</image:loc>
+            <image:title>Pankaj Kumawat ML Pipeline Workbench</image:title>
         </image:image>
     </url>
 
     <url>
-        <loc>https://luckyyaduvanshi.in/skills.html</loc>
-        <lastmod>2026-09-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://luckyyaduvanshi.in/#about</loc>
-        <lastmod>2026-09-03</lastmod>
+        <loc>https://pankajkumawat.in/#expertise</loc>
+        <lastmod>2026-09-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://luckyyaduvanshi.in/#projects</loc>
-        <lastmod>2026-09-03</lastmod>
+        <loc>https://pankajkumawat.in/#projects</loc>
+        <lastmod>2026-09-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://luckyyaduvanshi.in/#contact</loc>
-        <lastmod>2026-09-03</lastmod>
+        <loc>https://pankajkumawat.in/#skills</loc>
+        <lastmod>2026-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://pankajkumawat.in/#contact</loc>
+        <lastmod>2026-09-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>

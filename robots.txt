@@ -1,11 +1,11 @@
-# robots.txt for luckyyaduvanshi.in
-# Lucky Yaduvanshi Official Website - Python FastAPI Developer from Jaipur, India
+# robots.txt for pankajkumawat.in
+# Pankaj Kumawat Official Website - Software Engineer from Jaipur, India
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://luckyyaduvanshi.in/sitemap.xml
+Sitemap: https://pankajkumawat.in/sitemap.xml
 
 # Crawl-delay (respectful crawling)
 Crawl-delay: 1

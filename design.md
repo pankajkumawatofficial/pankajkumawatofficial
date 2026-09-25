@@ -1,6 +1,6 @@
-# Design System — Lucky Yaduvanshi (FastAPI Backend Engineer)
+# Design System — Pankaj Kumawat (Software Engineer)
 
-A locked Hallmark design system for Lucky Yaduvanshi's official developer portfolio. Every page in this project references this system.
+A locked Hallmark design system for Pankaj Kumawat's official developer portfolio. Every page in this project references this system.
 
 ## Genre
 `modern-minimal` (Linear / Stripe / GitBook school of developer tooling)
@@ -9,14 +9,14 @@ A locked Hallmark design system for Lucky Yaduvanshi's official developer portfo
 - Marketing & Portfolio Pages: **Workbench** (Two-column technical hero with interactive API request/response code workbench) + **Structured Systems Grid**
 - Technical Documentation & Deep Dives: **Long Document** / **Index-First**
 
-## Theme: FastAPI Emerald & Obsidian
+## Theme: Teal Terminal & Obsidian
 - `--color-paper`: `oklch(0.14 0.015 240)` (Obsidian Dark) / `oklch(0.99 0.003 240)` (Engineered Light)
 - `--color-paper-2`: `oklch(0.18 0.02 240)` (Elevated Card / Terminal Surface)
 - `--color-paper-3`: `oklch(0.22 0.02 240)` (Active Tab / Code Block Surface)
 - `--color-ink`: `oklch(0.96 0.01 240)` (Primary Crisp Ink) / `oklch(0.15 0.02 240)` (Light Mode Ink)
 - `--color-ink-muted`: `oklch(0.68 0.015 240)` (Secondary Text) / `oklch(0.45 0.02 240)` (Light Muted)
 - `--color-rule`: `oklch(0.26 0.02 240)` (1px Hairline Technical Borders)
-- `--color-accent`: `oklch(0.68 0.16 175)` (FastAPI Official Emerald-Teal)
+- `--color-accent`: `oklch(0.68 0.16 175)` (Emerald-Teal Accent)
 - `--color-accent-ink`: `oklch(0.98 0 0)`
 - `--color-focus`: `oklch(0.68 0.16 175)`
 
@@ -45,14 +45,14 @@ A locked Hallmark design system for Lucky Yaduvanshi's official developer portfo
 - Reduced motion fallback: Opacity-only, `≤ 150ms`.
 
 ## Microinteractions Stance
-- **FastAPI Code Workbench**: Tabbed code preview with instant switching (`0ms`).
+- **ML Pipeline Code Workbench**: Tabbed code preview with instant switching (`0ms`).
 - **Interactive Endpoint Test**: Realistic asynchronous latency simulation with live status code updates.
 - **Copy Endpoints / cURL**: Instant feedback with visual confirmation (`Copied ✓`).
 - **Focus Rings**: Instant visible focus ring (`outline: 2px solid var(--color-focus); outline-offset: 2px`).
 
 ## Nav & Footer Archetypes
 - **Nav**: **N5 Floating Pill** — content-sized, detached from edges, solid obsidian/light surface with 1px hairline border and subtle shadow.
-- **Footer**: **Ft2 Inline Single Line / Technical Colophon** — system status indicator, Python/FastAPI version tags, and direct engineering endpoints.
+- **Footer**: **Ft2 Inline Single Line / Technical Colophon** — system status indicator, Python/scikit-learn version tags, and direct engineering endpoints.
 
 ## Exports
 
