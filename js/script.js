@@ -97,61 +97,13 @@
     const responsePayloadEl = document.getElementById('responsePayload');
 
     function triggerResumeDownload() {
-        // Generate a cleanly formatted technical resume snapshot text file
-        const resumeContent = `================================================================================
-PANKAJ KUMAWAT — SOFTWARE ENGINEER
-================================================================================
-Location: Jaipur, Rajasthan, India
-Email: pankajkumawat2023@gmail.com
-GitHub: https://github.com/pankajkumawat
-LinkedIn: https://linkedin.com/in/pankajkumawat9950
-Portfolio: https://pankajkumawat.in
-
---------------------------------------------------------------------------------
-ROLES & CORE COMPETENCIES
---------------------------------------------------------------------------------
-- Software Engineer | AI/ML Engineer | Data Scientist | Backend Engineer
-- Machine Learning: regression/classification pipelines, feature engineering,
-  model selection & evaluation (scikit-learn)
-- Data Science: EDA, data cleaning, predictive modeling, insight generation
-  (pandas, NumPy, Matplotlib, Seaborn)
-- Backend: Python/Django MVC apps, session auth, REST-style data flows
-- Frontend: HTML5, CSS3, Bootstrap, JavaScript (responsive interfaces)
-
---------------------------------------------------------------------------------
-PROJECTS BUILT
---------------------------------------------------------------------------------
-1. House Price Prediction — (Mar 2025 - Apr 2025)
-   ML regression model predicting house prices from location, size, amenities.
-   Stack: Python, scikit-learn, pandas, NumPy.
-
-2. Customer Churn Analysis — (Apr 2025 - May 2025)
-   Classification project predicting churn risk + actionable retention insights.
-   Stack: Python, ML, pandas, Matplotlib, Seaborn.
-
-3. ConnectSphere — (Nov 2024 - Dec 2024)
-   Social media app with secure auth, profiles, posts/follows/likes/comments.
-   Stack: Python, Django, HTML, CSS, Bootstrap, MySQL.
-
---------------------------------------------------------------------------------
-EDUCATION & CERTIFICATIONS
---------------------------------------------------------------------------------
-- MCA: Computer Science — University of Rajasthan (2025 - Present, pursuing)
-- BCA: Computer Science — University Commerce College, Jaipur (7.4 CGPA)
-- Python Developer Certification — TechnoGlobe, Jaipur (2024 - 2025)
-
-Generated via ML pipeline report at ${new Date().toISOString()}
-================================================================================`;
-
-        const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-        const downloadUrl = URL.createObjectURL(blob);
+        // Serve the real resume document from /resumes
         const downloadAnchor = document.createElement('a');
-        downloadAnchor.href = downloadUrl;
-        downloadAnchor.download = 'Pankaj_Kumawat_Software_Engineer_Resume.txt';
+        downloadAnchor.href = 'resumes/PANKAJ_KUMAWAT_SOFTWARE_ENGINEER.docx';
+        downloadAnchor.download = 'PANKAJ_KUMAWAT_SOFTWARE_ENGINEER.docx';
         document.body.appendChild(downloadAnchor);
         downloadAnchor.click();
         document.body.removeChild(downloadAnchor);
-        setTimeout(() => URL.revokeObjectURL(downloadUrl), 2000);
     }
 
     if (testBtn && latencyEl && responsePayloadEl) {
