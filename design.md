@@ -41,7 +41,8 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 ## Motion
 - Easings: `cubic-bezier(0.16, 1, 0.3, 1)` named `--ease-out`.
 - Durations: `--dur-short: 180ms`, `--dur-base: 240ms`.
-- Motion Stance: **Motion layer** (user-requested). Subtle hover micro-interactions (lift, teal glow, sheen sweep) plus gentle scroll reveals via IntersectionObserver — `opacity` and `transform` only, ~650ms with staggered delays ≤450ms. No parallax or aurora blobs.
+- Motion Stance: **Motion layer** (user-requested). Subtle hover micro-interactions (lift, teal glow, sheen sweep) plus gentle scroll reveals via IntersectionObserver — `opacity` and `transform` only, ~650ms with staggered delays ≤450ms. No scroll parallax or aurora blobs.
+- Background: interactive **molecule canvas** (`js/molecules.js`) — teal particles with proximity bonds, gentle pointer attraction, and two-to-three decorative atoms (crossed orbit rings + electrons) that parallax with the mouse. Fixed at `z-index: -1` behind content, hidden under reduced motion.
 - Reduced motion fallback: all animations/transitions disabled under `prefers-reduced-motion: reduce`.
 
 ## Microinteractions Stance
