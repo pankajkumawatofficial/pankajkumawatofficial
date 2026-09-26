@@ -70,6 +70,7 @@
 
     function openMobileMenu() {
         if (!mobileMenu) return;
+        if (navPill) navPill.classList.remove('is-tucked');
         mobileMenu.classList.add('open');
         if (mobileMenuBackdrop) mobileMenuBackdrop.classList.add('open');
         if (mobileMenuBtn) {
@@ -116,6 +117,42 @@
             if (mobileMenuIsOpen() && window.innerWidth >= 1024) closeMobileMenu();
         });
     }
+
+    // ---- Mobile navbar scroll system: tucks above the viewport while
+    //      scrolling down, slides back on any scroll up. The transform is
+    //      gated to <=1023px in CSS, so desktop is unaffected. ----
+    const navPill = document.querySelector('.nav-pill');
+    let lastScrollY = window.scrollY;
+    let navTuckFrame = false;
+    let navTuckSuppressedUntil = 0;
+
+    function updateNavTuck() {
+        navTuckFrame = false;
+        if (!navPill) return;
+        const y = window.scrollY;
+        const delta = y - lastScrollY;
+        lastScrollY = y;
+        if (y <= 80 || delta < -6) {
+            // Near the top or any upward scroll: always show the navbar
+            navPill.classList.remove('is-tucked');
+        } else if (delta > 6 && y > 140 && Date.now() > navTuckSuppressedUntil && !mobileMenuIsOpen()) {
+            navPill.classList.add('is-tucked');
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!navTuckFrame) {
+            navTuckFrame = true;
+            requestAnimationFrame(updateNavTuck);
+        }
+    }, { passive: true });
+
+    // Anchor jumps smooth-scroll for a while: keep the navbar available
+    // through the jump, and only allow tucking again afterwards.
+    window.addEventListener('hashchange', () => {
+        navTuckSuppressedUntil = Date.now() + 1200;
+        if (navPill) navPill.classList.remove('is-tucked');
+    });
 
     // ---- Workbench Code Tabs ----
     const tabButtons = document.querySelectorAll('.code-tab-btn');

@@ -79,12 +79,14 @@ code, kbd, samp, pre, .font-mono {
     align-items: center;
     gap: 0.5rem;
     padding: 0.4rem 0.6rem 0.4rem 0.75rem;
+    margin-bottom: 2px; /* extra clearance below the navbar */
     background: var(--color-paper-2);
     border: 1px solid var(--color-rule);
     border-radius: var(--radius-pill);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     max-width: 100%;
-    transition: border-color var(--dur-short) var(--ease-out);
+    transition: border-color var(--dur-short) var(--ease-out),
+                transform 0.45s var(--ease-out);
 }
 
 .nav-pill:hover {
@@ -252,6 +254,9 @@ code, kbd, samp, pre, .font-mono {
     max-height: min(72vh, 34rem);
     overflow-y: auto;
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-rule) transparent;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-14px) scale(0.96);
@@ -260,6 +265,23 @@ code, kbd, samp, pre, .font-mono {
                 transform 0.45s var(--ease-out),
                 visibility 0.45s,
                 border-color 0.6s var(--ease-out);
+}
+
+.mobile-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mobile-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+    background: var(--color-rule);
+    border-radius: 3px;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
 }
 
 .mobile-menu.open {
@@ -325,6 +347,24 @@ code, kbd, samp, pre, .font-mono {
     }
     .mobile-nav-toggle {
         display: flex;
+    }
+    /* Full-width pill (brand left, actions right); contents scroll
+       horizontally if they ever overflow instead of being pushed
+       off-screen, with the scrollbar kept hidden. */
+    .nav-pill {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav-pill::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Tucks above the viewport while scrolling down, returns on scroll up */
+    .nav-pill.is-tucked {
+        transform: translateY(calc(-100% - 1.5rem));
     }
 }
 
@@ -1169,7 +1209,8 @@ code, kbd, samp, pre, .font-mono {
     .mobile-menu,
     .mobile-menu-backdrop,
     .mobile-menu .mobile-nav-link,
-    .nav-pill-wrapper {
+    .nav-pill-wrapper,
+    .nav-pill {
         transition: none !important;
         animation: none !important;
     }
