@@ -575,6 +575,47 @@ code, kbd, samp, pre, .font-mono {
     cursor: default;
 }
 
+/* More-from-GitHub compact project cards */
+.more-repo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    background: var(--color-paper-2);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.15rem;
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out),
+                transform 0.55s var(--ease-out),
+                box-shadow 0.55s var(--ease-out);
+}
+
+.more-repo-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -22px rgba(0, 0, 0, 0.55);
+}
+
+.repo-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 0.12rem 0.5rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-paper-3);
+    border: 1px solid var(--color-rule);
+    color: var(--color-ink-muted);
+}
+
+.repo-cta {
+    margin-top: auto;
+    color: var(--color-accent);
+    padding-top: 0.25rem;
+}
+
+.more-repo-card:hover .repo-cta {
+    text-decoration: underline;
+}
+
 /* ============================================================
    TECHNICAL SURFACES & CARDS
    ============================================================ */
@@ -1253,7 +1294,8 @@ code, kbd, samp, pre, .font-mono {
     .btn-primary:hover, .btn-terminal:hover, .btn-ghost:hover,
     .nav-btn-action:hover, .chat-chip:hover,
     .nav-link-item:hover,
-    .tech-card:hover, .api-spec-row:hover, .cert-frame:hover {
+    .tech-card:hover, .api-spec-row:hover, .cert-frame:hover,
+    .more-repo-card:hover {
         transform: none !important;
     }
     .marquee-track {

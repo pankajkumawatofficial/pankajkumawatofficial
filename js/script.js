@@ -160,7 +160,7 @@
 
     const CHAT_ANSWERS = {
         stack: 'Python 3.12 first — then scikit-learn for ML, Django + REST APIs for backends, MySQL for storage, and NumPy / pandas / Matplotlib for analysis.',
-        projects: 'Three shipped: House Price Prediction (scikit-learn regression), Customer Churn Analysis (classification), and ConnectSphere — a Django social platform. Full case cards sit in 02 // Project Portfolio below.',
+        projects: 'Three showcases up front — House Price Prediction, Customer Churn Analysis, and ConnectSphere — plus 11 more GitHub repos: a Django REST API, sales & vendor analytics, sales forecasting, and BI dashboards. All in 02 // Project Portfolio below.',
         available: 'Yes — open to Software Engineer and AI/ML Developer roles: internships, remote contracts, or full-time, from Jaipur or fully remote.',
         contact: 'Fastest is email: pankajkumawat2023@gmail.com — or use the form in the contact section below. GitHub and LinkedIn are linked there too.'
     };
