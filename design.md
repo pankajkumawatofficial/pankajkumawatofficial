@@ -52,7 +52,7 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 - **Focus Rings**: Instant visible focus ring (`outline: 2px solid var(--color-focus); outline-offset: 2px`).
 
 ## Nav & Footer Archetypes
-- **Nav**: **N5 Floating Pill** — content-sized, detached from edges, solid obsidian/light surface with 1px hairline border and subtle shadow. Responsive: full link row from 1024px (tightened spacing ≤1160px, `nowrap` links, pill capped at `max-width: 100%`); below 1024px the links collapse into an animated drawer (fade/slide-down, dimmed backdrop, closes on backdrop click, link tap, Escape, or resize-to-desktop, body scroll locked while open) with a 40px hamburger; tap targets ≥36px.
+- **Nav**: **N5 Floating Pill** — content-sized, detached from edges, solid obsidian/light surface with 1px hairline border and subtle shadow. Drops into place on load. Responsive: full link row from 1024px (tightened spacing ≤1160px, `nowrap` links, pill capped at `max-width: 100%`); below 1024px the links collapse into an animated drawer (fade/slide/scale entrance, dimmed backdrop, teal accent border when open, 50ms-per-link staggered cascade, closes on backdrop click, link tap, Escape, or resize-to-desktop, html+body scroll locked while open) with a 40px CSS-only hamburger that morphs bar-by-bar into an ×; tap targets ≥36px. Media-query display/gap overrides use `!important` to out-rank Tailwind's `.flex`/`gap-1` utilities, which the CDN injects later at equal specificity and would otherwise keep the desktop link row visible on phones.
 - **Footer**: **Ft2 Inline Single Line / Technical Colophon** — system status indicator, Python/scikit-learn version tags, and direct engineering endpoints.
 
 ## Exports

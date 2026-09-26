@@ -91,6 +91,16 @@ code, kbd, samp, pre, .font-mono {
     border-color: var(--color-accent);
 }
 
+/* Nav settles into place on load */
+@keyframes nav-drop {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: none; }
+}
+
+.nav-pill-wrapper {
+    animation: nav-drop 0.9s var(--ease-out) 0.15s both;
+}
+
 .nav-brand {
     display: flex;
     align-items: center;
@@ -175,6 +185,39 @@ code, kbd, samp, pre, .font-mono {
     color: var(--color-accent);
 }
 
+/* Pure-CSS hamburger: bars morph into an × when the drawer opens
+   (no icon-font dependency, smooth per-bar rotation) */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.45s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
 .mobile-menu-backdrop {
     position: fixed;
     inset: 0;
@@ -211,17 +254,19 @@ code, kbd, samp, pre, .font-mono {
     overscroll-behavior: contain;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translateY(-14px) scale(0.96);
     transform-origin: top center;
     transition: opacity 0.45s var(--ease-out),
                 transform 0.45s var(--ease-out),
-                visibility 0.45s;
+                visibility 0.45s,
+                border-color 0.6s var(--ease-out);
 }
 
 .mobile-menu.open {
     opacity: 1;
     visibility: visible;
     transform: none;
+    border-color: color-mix(in oklch, var(--color-accent) 35%, transparent);
 }
 
 .mobile-nav-link {
@@ -234,9 +279,13 @@ code, kbd, samp, pre, .font-mono {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    opacity: 0;
+    transform: translateY(8px);
     transition: background-color var(--dur-short) var(--ease-out),
                 color var(--dur-short) var(--ease-out),
-                border-color var(--dur-short) var(--ease-out);
+                border-color var(--dur-short) var(--ease-out),
+                opacity 0.55s var(--ease-out),
+                transform 0.55s var(--ease-out);
 }
 
 .mobile-nav-link:hover {
@@ -250,20 +299,40 @@ code, kbd, samp, pre, .font-mono {
     border-left-color: var(--color-accent);
 }
 
-/* Desktop links fit comfortably from 1024px up; tablets & phones get the drawer */
+/* Drawer links cascade in one after another when the menu opens.
+   Delays map only onto the opacity/transform slots of the transition list so
+   hover color changes stay instant; closing resets to the delay-free base. */
+.mobile-menu.open .mobile-nav-link {
+    opacity: 1;
+    transform: none;
+}
+
+.mobile-menu.open .mobile-nav-link:nth-child(1) { transition-delay: 0s, 0s, 0s, 0ms, 0ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(2) { transition-delay: 0s, 0s, 0s, 50ms, 50ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(3) { transition-delay: 0s, 0s, 0s, 100ms, 100ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(4) { transition-delay: 0s, 0s, 0s, 150ms, 150ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(5) { transition-delay: 0s, 0s, 0s, 200ms, 200ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(6) { transition-delay: 0s, 0s, 0s, 250ms, 250ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(7) { transition-delay: 0s, 0s, 0s, 300ms, 300ms; }
+.mobile-menu.open .mobile-nav-link:nth-child(8) { transition-delay: 0s, 0s, 0s, 350ms, 350ms; }
+
+/* Desktop links fit comfortably from 1024px up; tablets & phones get the drawer.
+   !important: Tailwind's `.flex` utility is injected later in the cascade at
+   equal specificity and would otherwise keep the link row visible on mobile. */
 @media (max-width: 1023px) {
     .nav-links-desktop {
-        display: none;
+        display: none !important;
     }
     .mobile-nav-toggle {
         display: flex;
     }
 }
 
-/* Tighten link spacing on small laptops so nothing wraps at 1024–1160px */
+/* Tighten link spacing on small laptops so nothing wraps at 1024–1160px
+   (!important beats Tailwind's gap-1 utility for the same cascade reason) */
 @media (max-width: 1160px) {
     .nav-links-desktop {
-        gap: 0;
+        gap: 0 !important;
     }
     .nav-link-item {
         padding-left: 0.5rem;
@@ -1098,8 +1167,11 @@ code, kbd, samp, pre, .font-mono {
         animation: none !important;
     }
     .mobile-menu,
-    .mobile-menu-backdrop {
+    .mobile-menu-backdrop,
+    .mobile-menu .mobile-nav-link,
+    .nav-pill-wrapper {
         transition: none !important;
+        animation: none !important;
     }
 }
 
