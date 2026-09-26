@@ -6,7 +6,7 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 `modern-minimal` (Linear / Stripe / GitBook school of developer tooling)
 
 ## Macrostructure Family
-- Marketing & Portfolio Pages: **Workbench** (Two-column technical hero with interactive API request/response code workbench) + **Structured Systems Grid**
+- Marketing & Portfolio Pages: **Workbench** (Two-column hero: declarative left column + AI assistant mini-chat right column) + **Structured Systems Grid**
 - Technical Documentation & Deep Dives: **Long Document** / **Index-First**
 
 ## Theme: Teal Terminal & Obsidian
@@ -46,7 +46,7 @@ A locked Hallmark design system for Pankaj Kumawat's official developer portfoli
 - Reduced motion fallback: all animations/transitions disabled under `prefers-reduced-motion: reduce`.
 
 ## Microinteractions Stance
-- **ML Pipeline Code Workbench**: Tabbed code preview with instant switching (`0ms`).
+- **AI Assistant Mini-Chat**: Scripted hero Q&A widget — suggestion chips, typing indicator (900ms), answers drawn only from real page facts. No API.
 - **Interactive Endpoint Test**: Realistic asynchronous latency simulation with live status code updates.
 - **Copy Endpoints / cURL**: Instant feedback with visual confirmation (`Copied ✓`).
 - **Focus Rings**: Instant visible focus ring (`outline: 2px solid var(--color-focus); outline-offset: 2px`).

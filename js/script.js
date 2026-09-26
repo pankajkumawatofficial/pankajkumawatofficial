@@ -154,91 +154,55 @@
         if (navPill) navPill.classList.remove('is-tucked');
     });
 
-    // ---- Workbench Code Tabs ----
-    const tabButtons = document.querySelectorAll('.code-tab-btn');
-    const tabPanes = document.querySelectorAll('.code-pane');
+    // ---- Hero AI Assistant Mini-Chat (scripted demo — answers are real page facts) ----
+    const chatMessages = document.getElementById('chatMessages');
+    const chatChips = document.getElementById('chatChips');
 
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.add('hidden'));
-            btn.classList.add('active');
-            const targetPane = document.getElementById(`tab-${targetTab}`);
-            if (targetPane) targetPane.classList.remove('hidden');
-        });
-    });
+    const CHAT_ANSWERS = {
+        stack: 'Python 3.12 first — then scikit-learn for ML, Django + REST APIs for backends, MySQL for storage, and NumPy / pandas / Matplotlib for analysis.',
+        projects: 'Three shipped: House Price Prediction (scikit-learn regression), Customer Churn Analysis (classification), and ConnectSphere — a Django social platform. Full case cards sit in 02 // Project Portfolio below.',
+        available: 'Yes — open to Software Engineer and AI/ML Developer roles: internships, remote contracts, or full-time, from Jaipur or fully remote.',
+        contact: 'Fastest is email: pankajkumawat2023@gmail.com — or use the form in the contact section below. GitHub and LinkedIn are linked there too.'
+    };
 
-    // ---- ML Pipeline Run / Resume Export Simulator ----
-    const testBtn = document.getElementById('btnTestEndpoint');
-    const latencyEl = document.getElementById('workbenchLatency');
-    const responsePayloadEl = document.getElementById('responsePayload');
+    if (chatMessages && chatChips) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const chipButtons = chatChips.querySelectorAll('.chat-chip');
+        let chatBusy = false;
 
-    function openResumePdf() {
-        // Open the real PDF resume (stored in /resume) in a new browser tab
-        const resumeAnchor = document.createElement('a');
-        resumeAnchor.href = 'resume/Pankaj_Kumawat.pdf';
-        resumeAnchor.target = '_blank';
-        resumeAnchor.rel = 'noopener';
-        document.body.appendChild(resumeAnchor);
-        resumeAnchor.click();
-        document.body.removeChild(resumeAnchor);
-    }
+        function addChatBubble(kind, text) {
+            const el = document.createElement('div');
+            el.className = 'chat-msg chat-msg-' + kind;
+            el.textContent = text;
+            chatMessages.appendChild(el);
+            requestAnimationFrame(() => el.classList.add('visible'));
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-    if (testBtn && latencyEl && responsePayloadEl) {
-        testBtn.addEventListener('click', () => {
-            testBtn.disabled = true;
-            testBtn.innerHTML = '<span class="animate-spin inline-block w-3 h-3 border-2 border-white/40 border-t-white rounded-full mr-1.5"></span> Training...';
-
-            // Simulate sub-3ms async pipeline execution
+        function botSay(text) {
+            chatBusy = true;
+            chipButtons.forEach(c => { c.disabled = true; });
+            const typing = document.createElement('div');
+            typing.className = 'chat-typing';
+            typing.setAttribute('aria-hidden', 'true');
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(typing);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
             setTimeout(() => {
-                const simulatedLatency = (Math.random() * 1.8 + 1.2).toFixed(1);
-                latencyEl.textContent = `${simulatedLatency}ms`;
+                typing.remove();
+                addChatBubble('bot', text);
+                chatBusy = false;
+                chipButtons.forEach(c => { c.disabled = false; });
+            }, reducedMotion ? 0 : 900);
+        }
 
-                // Switch to response tab
-                const responseTabBtn = document.querySelector('[data-tab="response"]');
-                if (responseTabBtn) responseTabBtn.click();
-
-                // Build response payload
-                const now = new Date().toISOString();
-                const samplePayload = {
-                    pipeline: "house_price_regression",
-                    model: "RandomForestRegressor",
-                    metrics: {
-                        r2_score: 0.9142,
-                        mae: 18420.55,
-                        rmse: 24710.83,
-                        cv_mean: 0.9138,
-                        cv_std: 0.0182
-                    },
-                    telemetry: {
-                        latency_ms: parseFloat(simulatedLatency),
-                        runtime: "scikit-learn 1.5 / Python 3.12",
-                        concurrency_mode: "asyncio.to_thread (non-blocking training)",
-                        cache_hit: true
-                    },
-                    engineer: {
-                        name: "Pankaj Kumawat",
-                        role: "Software Engineer",
-                        specialization: ["AI/ML Engineering", "Data Science & Analytics", "Python / Django Backend"],
-                        location: "Jaipur, Rajasthan, India",
-                        availability: "Open to Software Engineer, AI/ML & Data Science roles",
-                        contact: "pankajkumawat2023@gmail.com",
-                        projects_built: 3,
-                        github: "https://github.com/pankajkumawatofficial"
-                    },
-                    download_status: "initiated",
-                    generated_at: now
-                };
-                responsePayloadEl.textContent = JSON.stringify(samplePayload, null, 2);
-
-                // Open the PDF resume in a new browser tab
-                openResumePdf();
-
-                testBtn.disabled = false;
-                testBtn.innerHTML = '<span class="iconify mr-1" data-icon="lucide:rotate-ccw" data-width="12"></span> Re-run Pipeline';
-                if (window.Iconify) window.Iconify.scan(testBtn);
-            }, 360);
+        chatChips.addEventListener('click', (e) => {
+            const chip = e.target.closest('.chat-chip');
+            if (!chip || chatBusy) return;
+            const answer = CHAT_ANSWERS[chip.dataset.q];
+            if (!answer) return;
+            addChatBubble('user', chip.textContent.trim());
+            botSay(answer);
         });
     }
 

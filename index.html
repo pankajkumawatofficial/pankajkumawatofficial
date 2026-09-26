@@ -316,97 +316,21 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive ML Workbench (Creative Pipeline Demo) -->
-                <div class="code-workbench">
-                    <div class="code-header">
-                        <div class="code-tabs">
-                            <button class="code-tab-btn active" data-tab="model">pipeline.py</button>
-                            <button class="code-tab-btn" data-tab="run">run.sh</button>
-                            <button class="code-tab-btn" data-tab="response">report.json</button>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-[11px] text-[var(--color-ink-muted)] font-mono">run <span id="workbenchLatency">1.8ms</span></span>
-                        </div>
+                <!-- Right Column: AI Assistant Mini-Chat (scripted demo — answers are real page facts) -->
+                <div class="hero-chat" role="region" aria-label="AI assistant demo">
+                    <div class="chat-header">
+                        <span class="chat-status-dot" aria-hidden="true"></span>
+                        <span class="chat-title">pankaj-ai // assistant</span>
+                        <span class="chat-demo-badge">demo</span>
                     </div>
-
-                    <!-- Code Tab 1: Software-Engineer-Style Training Module -->
-                    <div id="tab-model" class="code-pane code-body">
-                        <pre><code><span class="syn-kw">from</span> dataclasses <span class="syn-kw">import</span> dataclass
-<span class="syn-kw">from</span> sklearn.ensemble <span class="syn-kw">import</span> RandomForestRegressor
-<span class="syn-kw">from</span> sklearn.model_selection <span class="syn-kw">import</span> train_test_split
-
-<span class="syn-dec">@dataclass</span>(frozen=<span class="syn-kw">True</span>)
-<span class="syn-kw">class</span> <span class="syn-type">TrainConfig</span>:
-    test_size: float = <span class="syn-num">0.2</span>
-    n_estimators: int = <span class="syn-num">300</span>
-    max_depth: int = <span class="syn-num">18</span>
-
-<span class="syn-kw">def</span> <span class="syn-fn">train</span>(df, cfg: TrainConfig) -&gt; tuple:
-    <span class="syn-str">"""Train and evaluate the house-price model."""</span>
-    X = df.drop(columns=[<span class="syn-str">"price"</span>])
-    y = df[<span class="syn-str">"price"</span>]
-    X_tr, X_te, y_tr, y_te = train_test_split(
-        X, y, test_size=cfg.test_size, random_state=<span class="syn-num">42</span>
-    )
-    model = RandomForestRegressor(
-        n_estimators=cfg.n_estimators,
-        max_depth=cfg.max_depth,
-        n_jobs=<span class="syn-num">-1</span>,
-    ).fit(X_tr, y_tr)
-    <span class="syn-kw">return</span> model, model.score(X_te, y_te)</code></pre>
+                    <div class="chat-messages" id="chatMessages" aria-live="polite">
+                        <div class="chat-msg chat-msg-bot visible">Hi — I&rsquo;m Pankaj&rsquo;s assistant. Ask me anything about his work.</div>
                     </div>
-
-                    <!-- Code Tab 2: CLI Run -->
-                    <div id="tab-run" class="code-pane code-body hidden">
-                        <pre><code><span class="syn-cmt"># Train &amp; evaluate the house-price regression pipeline</span>
-./run.sh --dataset data/house_prices.csv \
-  --target price \
-  --model random_forest \
-  --cv-folds 5 \
-  --export metrics.json
-
-<span class="syn-cmt"># Output ->  R² score: 0.91 · RMSE: $24.7k · CV mean: 0.91</span></code></pre>
-                    </div>
-
-                    <!-- Code Tab 3: JSON Report Payload -->
-                    <div id="tab-response" class="code-pane code-body hidden">
-                        <pre><code id="responsePayload" class="text-emerald-400">{
-  "pipeline": "house_price_regression",
-  "model": "RandomForestRegressor",
-  "metrics": {
-    "r2_score": 0.9142,
-    "mae": 18420.55,
-    "rmse": 24710.83,
-    "cv_mean": 0.9138,
-    "cv_std": 0.0182
-  },
-  "dataset": {
-    "samples": 1460,
-    "features": 79,
-    "missing_handled": "median_imputation"
-  },
-  "engineer": {
-    "name": "Pankaj Kumawat",
-    "role": "Software Engineer",
-    "specialization": [
-      "AI/ML Engineering",
-      "Data Science & Analytics",
-      "Python / Django Backend"
-    ],
-    "location": "Jaipur, Rajasthan, India"
-  },
-  "runtime": "scikit-learn 1.5 / Python 3.12",
-  "generated_at": "auto"
-}</code></pre>
-                    </div>
-
-                    <!-- Test Trigger Bar -->
-                    <div class="workbench-test-bar">
-                        <span class="text-[var(--color-ink-muted)] text-[11px] font-mono">Simulate ML pipeline run &amp; export report</span>
-                        <button id="btnTestEndpoint" class="btn-test-endpoint">
-                            <span class="iconify" data-icon="lucide:play" data-width="12"></span>
-                            Run Pipeline &amp; Export Report
-                        </button>
+                    <div class="chat-chips" id="chatChips">
+                        <button type="button" class="chat-chip" data-q="stack">What&rsquo;s your stack?</button>
+                        <button type="button" class="chat-chip" data-q="projects">Show me projects</button>
+                        <button type="button" class="chat-chip" data-q="available">Are you available?</button>
+                        <button type="button" class="chat-chip" data-q="contact">How can I reach you?</button>
                     </div>
                 </div>
             </div>
