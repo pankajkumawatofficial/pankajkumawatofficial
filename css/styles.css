@@ -461,7 +461,7 @@ code, kbd, samp, pre, .font-mono {
     flex-direction: column;
     gap: 0.6rem;
     padding: 1rem;
-    min-height: 230px;
+    min-height: 170px;
     max-height: 300px;
     overflow-y: auto;
     overscroll-behavior: contain;
