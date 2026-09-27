@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Pankaj Kumawat (Software Engineer). Static HTML/CSS/JS site hosted at pankajkumawat.in.
+Personal portfolio website for Pankaj Kumawat (Software Engineer). Static HTML/CSS/JS site hosted at pankajkumawat.in. Doubles as a services site: the `00 // Services` section right after the hero carries the client offer (4 service cards → contact form preselect), a P1–P4 process strip, and business FAQs (pricing/timeline/kickoff) kept in sync with the FAQ JSON-LD schema.
 
 ## Development Commands
 
@@ -20,7 +20,7 @@ No build steps required — this is a static site. Edit files directly:
 The project uses a locked Hallmark design system defined in `design.md`:
 - **Theme**: Teal Terminal & Obsidian (dark-first with light mode support)
 - **Fonts**: Space Grotesk (display), Geist Sans/Inter (body), JetBrains Mono (code)
-- **Motion**: slow, cinematic hover micro-interactions (lift/glow/sheen, 340–600ms) + item-level IntersectionObserver scroll reveals (transform/opacity only, ~1.35s, 200ms per-batch stagger); respects `prefers-reduced-motion`
+- **Motion**: slow, cinematic hover micro-interactions (lift/glow/sheen, 680–1200ms) + item-level IntersectionObserver scroll reveals (transform/opacity only, ~2.7s, 400ms per-batch stagger); respects `prefers-reduced-motion`
 
 ### Key Design Tokens (`tokens.css`)
 - Colors: `--color-paper`, `--color-paper-2`, `--color-ink`, `--color-accent`

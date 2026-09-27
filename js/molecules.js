@@ -24,7 +24,7 @@
 
     var LINK_DIST = 125;     // max distance for particle-to-particle bonds
     var POINTER_DIST = 170;  // reach of pointer attraction / bonds
-    var SPEED = 0.6;         // global motion scaler — everything drifts gently
+    var SPEED = 0.3;         // global motion scaler — everything drifts gently (0.5× cadence)
     var parX = 0;            // eased parallax so atoms trail the pointer
     var parY = 0;
     var isLight = null;

@@ -150,7 +150,7 @@
     // Anchor jumps smooth-scroll for a while: keep the navbar available
     // through the jump, and only allow tucking again afterwards.
     window.addEventListener('hashchange', () => {
-        navTuckSuppressedUntil = Date.now() + 1200;
+        navTuckSuppressedUntil = Date.now() + 2400;
         if (navPill) navPill.classList.remove('is-tucked');
     });
 
@@ -161,6 +161,7 @@
     const CHAT_ANSWERS = {
         stack: 'Python 3.12 first — then scikit-learn for ML, Django + REST APIs for backends, MySQL for storage, and NumPy / pandas / Matplotlib for analysis.',
         projects: 'Three showcases up front — House Price Prediction, Customer Churn Analysis, and ConnectSphere — plus 11 more GitHub repos: a Django REST API, sales & vendor analytics, sales forecasting, and BI dashboards. All in 02 // Project Portfolio below.',
+        services: 'Four services: web apps & APIs (Django/Python), data analysis & dashboards, machine-learning models, and automation scripts. Fixed-scope quotes, free 30-minute scoping call, reply within 24h — full details in 00 // Services below.',
         available: 'Yes — open to Software Engineer and AI/ML Developer roles: internships, remote contracts, or full-time, from Jaipur or fully remote.',
         contact: 'Fastest is email: pankajkumawat2023@gmail.com — or use the form in the contact section below. GitHub and LinkedIn are linked there too.'
     };
@@ -238,6 +239,17 @@
     const formMessage = document.getElementById('formMessage');
     const submitBtn = document.getElementById('contactSubmit');
 
+    // ---- Service CTA → preselect the matching option in the contact form ----
+    const serviceSelect = document.getElementById('contactService');
+    document.querySelectorAll('.service-cta[data-service]').forEach((cta) => {
+        cta.addEventListener('click', () => {
+            if (!serviceSelect) return;
+            serviceSelect.value = cta.getAttribute('data-service') || '';
+            serviceSelect.classList.add('service-preselected');
+            setTimeout(() => serviceSelect.classList.remove('service-preselected'), 2500);
+        });
+    });
+
     if (contactForm && formMessage && submitBtn) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -260,11 +272,11 @@
     // Reveal units are item-level: cards, workflow rows, timeline entries,
     // cert frames, and plain text blocks — grids cascade through to their
     // cards instead of animating as one slab. Elements entering the viewport
-    // together stagger (200ms apart); solo elements appear immediately.
+    // together stagger (400ms apart); solo elements appear immediately.
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion && 'IntersectionObserver' in window) {
         const ITEM_SELECTOR = '.tech-card, .api-spec-row, .timeline-item, .cert-frame';
-        const STAGGER_MS = 200;
+        const STAGGER_MS = 400;
 
         const collectUnits = (container, out) => {
             Array.from(container.children).forEach((child) => {
