@@ -6,11 +6,6 @@
 (function () {
     'use strict';
 
-    // ---- Configure Tailwind Dark Mode ----
-    if (window.tailwind) {
-        window.tailwind.config = { darkMode: 'class' };
-    }
-
     // ---- Theme Toggle (Dual Dark / Light class synchronization) ----
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');

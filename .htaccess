@@ -6,13 +6,13 @@
 RewriteEngine On
 RewriteBase /
 
-# Force HTTPS (enable when SSL is installed)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Force HTTPS (canonical scheme — site is served over TLS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www to non-www (or vice versa - choose one)
-# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Redirect www to non-www (canonical host matches <link rel="canonical">)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
 
 # Remove trailing slashes
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -27,8 +27,8 @@ Order allow,deny
 Deny from all
 </FilesMatch>
 
-# Protect config files
-<FilesMatch "\.(env|json|config|md|gitignore)$">
+# Protect source/config files (manifest.json must stay public for the PWA)
+<FilesMatch "^(\.env|package(-lock)?\.json|tailwind\.config\.js|CLAUDE\.md|design\.md|README\.md|tokens\.css)$">
 Order allow,deny
 Deny from all
 </FilesMatch>
@@ -58,6 +58,8 @@ ExpiresByType image/jpeg "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
 ExpiresByType image/gif "access plus 1 year"
 ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/avif "access plus 1 year"
 ExpiresByType image/x-icon "access plus 1 year"
 
 # CSS & JavaScript
@@ -91,6 +93,9 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
 # Permissions-Policy
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+# HSTS — force HTTPS for browsers that have visited once (no preload)
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # CORS Headers for fonts (if needed)

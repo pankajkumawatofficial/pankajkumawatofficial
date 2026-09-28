@@ -1,0 +1,18 @@
+{
+  "name": "pankajkumawat-in",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio & services website for Pankaj Kumawat — pankajkumawat.in",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankajkumawatofficial/pankajkumawatofficial.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

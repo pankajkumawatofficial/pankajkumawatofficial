@@ -8,11 +8,18 @@ Personal portfolio website for Pankaj Kumawat (Software Engineer). Static HTML/C
 
 ## Development Commands
 
-No build steps required — this is a static site. Edit files directly:
+Static site — edit files directly, with one optional build step:
 - `css/styles.css` — main stylesheet
 - `js/script.js` — JavaScript interactions
 - `tokens.css` — design system tokens (referenced by styles.css)
 - `index.html` — main portfolio page
+- `css/tailwind.css` — **generated** Tailwind utilities (do not edit by hand)
+
+After adding/changing any Tailwind utility class in HTML/JS, rebuild and verify:
+- `npm install` (first time only)
+- `npm run build:css` — compiles `css/tailwind.src.css` → `css/tailwind.css` (uses `tailwind.config.js`; scans `index.html`, `404.html`, `js/*.js`)
+- `node scripts/check-classes.js` — fails if a class used in HTML/JS is missing from generated or hand-written CSS
+- `npm run watch:css` — rebuild on change while editing
 
 ## Architecture
 
